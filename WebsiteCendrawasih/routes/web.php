@@ -28,6 +28,9 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
+//refrence
+Route::get('/home2', [HomeController::class, 'home2'])->name('home2');
+
 Route::get('/AdminDashboard', [DashboardController::class, 'Admindashboard'])->name('Admindashboard');
 
 //tambah user

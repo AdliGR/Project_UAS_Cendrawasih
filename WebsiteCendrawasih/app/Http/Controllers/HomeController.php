@@ -12,4 +12,8 @@ class HomeController extends Controller
         $fotos = Foto::all();
         return view('home', compact('fotos'));
     }
+
+    public function home2(){
+        return view('home2');
+    }
 }

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Foto;
 
 class HomeController extends Controller
 {
     public function home(){
-        return view('home');
+        
+        $fotos = Foto::all();
+        return view('home', compact('fotos'));
     }
 }

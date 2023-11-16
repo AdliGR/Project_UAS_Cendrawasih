@@ -33,6 +33,34 @@
   <link href="/corporate-ui-dashboard-main/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="/corporate-ui-dashboard-main/assets/css/corporate-ui-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <style>
+    .home-section {
+      background-image: url('/corporate-ui-dashboard-main/assets/img/Background.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white; 
+      background-color: rgba(0, 0, 0, 1);
+    }
+
+    .home-content {
+      max-width: 600px; 
+    }
+
+    .home-content h1 {
+      font-size: 2.5em; 
+      margin-bottom: 20px;
+      color: white:
+    }
+
+    .home-content p {
+      font-size: 1.2em; 
+    }
+  </style>
 </head>
 
 <body class="">
@@ -81,7 +109,7 @@
                     <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="opacity-6 me-1">
                       <path fill-rule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z" clip-rule="evenodd" />
                     </svg>
-                    About US
+                    About Us
                   </a>
                 </li>
                 <li class="nav-item">
@@ -95,7 +123,7 @@
               </ul>
               <ul class="navbar-nav d-lg-block d-none">
                 <li class="nav-item">
-                  <a href="https://www.creative-tim.com/product/corporate-ui-dashboard" class="btn btn-sm mb-0 bg-gradient-dark">Free download</a>
+                  <a href="{{ route('Admindashboard') }}" class="btn btn-sm mb-0 bg-gradient-dark">Free download</a>
                 </li>
               </ul>
             </div>
@@ -106,8 +134,11 @@
     </div>
   </div>
   <main class="main-content  mt-0">
-    <section>
-    
+    <section class="home-section">
+      <div class="home-content">
+        <h1>Selamat datang di Yayasan Sekolah Cendrwasih</h1>
+        <p>Tempat Belajar Berkualitas untuk Masa Depan Cerah</p>
+      </div>
     </section>
   </main>
   <!--   Core JS Files   -->
@@ -115,15 +146,6 @@
   <script src="/corporate-ui-dashboard-main/assets/js/core/bootstrap.min.js"></script>
   <script src="/corporate-ui-dashboard-main/assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="/corporate-ui-dashboard-main/assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Corporate UI Dashboard: parallax effects, scripts for the example pages etc -->

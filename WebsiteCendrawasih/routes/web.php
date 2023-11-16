@@ -7,6 +7,8 @@ use App\Http\Controllers\TambahGaleryController;
 use App\Http\Controllers\FotoController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\HomeController;
+
 
 
 /*
@@ -24,7 +26,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', HomeController)
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::get('/AdminDashboard', [DashboardController::class, 'Admindashboard'])->name('Admindashboard');
 

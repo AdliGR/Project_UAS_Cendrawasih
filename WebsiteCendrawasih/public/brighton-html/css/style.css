@@ -37,7 +37,7 @@ body {
   margin-top: 100px;
 }
 
-/*header section*/
+/*header section Bagian yang ada Gambarnya aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
 .hero_area {
   position: relative;
   background-color: #78853f;
@@ -52,8 +52,9 @@ body {
   height: auto;
 }
 
+/*navbar*/
 .header_section {
-  background-color: #90953b;
+  background-color: rgb(60, 119, 177);
 }
 
 .header_section .container-fluid {

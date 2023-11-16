@@ -628,7 +628,7 @@
     <div class="container layout_padding2-top">
       <div class="heading_container">
         <h2>
-          Parent’s Feedback
+          SCHOOL STAFF
         </h2>
       </div>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -779,7 +779,7 @@
     <div class="container">
       <div class="info_form">
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="offset-lg-3 col-lg-3">
             <h5 class="form_heading">
               Newsletter
@@ -793,7 +793,7 @@
               </button>
             </form>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -805,7 +805,7 @@
               <a href="">
                 <img src="/brighton-html/images/logo.png" alt="" />
                 <span>
-                  Brighton
+                  Cendrawasih
                 </span>
               </a>
             </div>
@@ -858,10 +858,10 @@
 
   <!-- footer section -->
   <section class="container-fluid footer_section">
-    <p>
+    <!-- <p>
       &copy; 2019 All Rights Reserved By
       <a href="https://html.design/">Free Html Templates</a>
-    </p>
+    </p> -->
   </section>
   <!-- footer section -->
 

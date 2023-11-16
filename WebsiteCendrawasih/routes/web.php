@@ -39,8 +39,6 @@ Route::get('/users', [UserController::class, 'create'])->name('users.create');
 Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
-
-
 //galeri
 Route::get('/tambahgaleri', [TambahGaleryController::class, 'Galery'])->name('Galery');
 Route::delete('/gallery/{id}', [TambahGaleryController::class, 'delete'])->name('gallery.delete');

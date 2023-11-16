@@ -12,6 +12,8 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
+  <link rel="icon" type="image/png" href="/material-dashboard-master/assets/img/favicon.png">
+
   <title>Brighton</title>
 
   <!-- slider stylesheet -->
@@ -36,10 +38,10 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="" />
-            <span>
+            <img src="/material-dashboard-master/assets/img/Logo_Sekolah_Cendrawasih_resize-removebg-preview.png" alt="" />
+            <!-- <span>
               Brighton
-            </span>
+            </span> -->
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -588,7 +590,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
+            <img src="/brighton-html/images/about-img.jpg" alt="">
           </div>
         </div>
         <div class="col-md-5 col-lg-4">
@@ -634,7 +636,7 @@
           <div class="carousel-item active">
             <div class="client_container layout_padding">
               <div class="img-box">
-                <img src="images/client.png" alt="">
+                <img src="/brighton-html/images/client.png" alt="">
               </div>
               <div class="detail-box">
                 <h4>
@@ -652,14 +654,14 @@
                   the
                   middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
                 </p>
-                <img src="images/quote.png" alt="">
+                <img src="/brighton-html/images/quote.png" alt="">
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="client_container layout_padding">
               <div class="img-box">
-                <img src="images/client.png" alt="">
+                <img src="/brighton-html/images/client.png" alt="">
               </div>
               <div class="detail-box">
                 <h4>
@@ -677,14 +679,14 @@
                   the
                   middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
                 </p>
-                <img src="images/quote.png" alt="">
+                <img src="/brighton-html/images/quote.png" alt="">
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="client_container layout_padding">
               <div class="img-box">
-                <img src="images/client.png" alt="">
+                <img src="/brighton-html/images/client.png" alt="">
               </div>
               <div class="detail-box">
                 <h4>
@@ -702,7 +704,7 @@
                   the
                   middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
                 </p>
-                <img src="images/quote.png" alt="">
+                <img src="/brighton-html/images/quote.png" alt="">
               </div>
             </div>
           </div>
@@ -801,7 +803,7 @@
           <div class="info_logo">
             <div>
               <a href="">
-                <img src="images/logo.png" alt="" />
+                <img src="/brighton-html/images/logo.png" alt="" />
                 <span>
                   Brighton
                 </span>
@@ -863,8 +865,8 @@
   </section>
   <!-- footer section -->
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="/brighton-html/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/brighton-html/js/bootstrap.js"></script>
 
   <script>
     // This example adds a marker to indicate the position of Bondi Beach in Sydney,
@@ -878,7 +880,7 @@
         }
       });
 
-      var image = "images/maps-and-flags.png";
+      var image = "/brighton-html/images/maps-and-flags.png";
       var beachMarker = new google.maps.Marker({
         position: {
           lat: 40.645037,

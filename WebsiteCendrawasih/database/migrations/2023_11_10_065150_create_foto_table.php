@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama_file');
             $table->string('acara');
-            $table->string('file_path');
+            $table->string('file_path_foto');
+            $table->string('file_path_foto_comp');
             $table->timestamps();
         });
     }

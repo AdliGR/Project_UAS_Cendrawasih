@@ -27,6 +27,8 @@ use App\Http\Controllers\HomeController;
 // });
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/index', [HomeController::class, 'index'])->name('index');
+
 
 //refrence
 Route::get('/home2', [HomeController::class, 'home2'])->name('home2');
@@ -34,10 +36,16 @@ Route::get('/home2', [HomeController::class, 'home2'])->name('home2');
 Route::get('/AdminDashboard', [DashboardController::class, 'Admindashboard'])->name('Admindashboard');
 
 //tambah user
-Route::get('/listusers', [UserController::class, 'showuserlist'])->name('showuserlist');
-Route::get('/users', [UserController::class, 'create'])->name('users.create');
-Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
-Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::controller(UserController::class)->group(function(){
+    Route::get('/listusers',  'showuserlist')->name('showuserlist');
+    Route::get('/users',  'create')->name('users.create');
+    Route::post('/users/store',  'store')->name('users.store');
+    Route::delete('/users/{id}',  'destroy')->name('users.destroy');
+    Route::get('/listusers', 'showuserlist')->name('showuserlist');
+    Route::get('/users', 'create')->name('users.create');
+    Route::post('/users/store', 'store')->name('users.store');
+    Route::delete('/users/{id}', 'destroy')->name('users.destroy');
+});
 
 //galeri
 Route::get('/tambahgaleri', [TambahGaleryController::class, 'Galery'])->name('Galery');
@@ -53,12 +61,15 @@ Route::get('/listfoto', [FotoController::Class, 'listfoto'])->name('listfoto');
 Route::delete('/deletePhoto', [FotoController::class, 'deletePhoto'])->name('deletePhoto');
 
 //fasilitas
-Route::get('/fasilitas', [FasilitasController::class, 'index'])->name('index.fasilitas');
-Route::get('/fasilitascreate', [FasilitasController::class, 'create'])->name('fasilitas.create');
-Route::post('/fasilitas', [FasilitasController::class, 'store'])->name('fasilitas.store');
-Route::delete('/fasilitas/{id}', [FasilitasController::class, 'destroy'])->name('fasilitas.destroy');
-Route::get('/fasilitasedit/{id}', [FasilitasController::class, 'editForm'])->name('fasilitas.edit');
-Route::put('/fasilitasedit/{id}', [FasilitasController::class, 'update'])->name('fasilitas.update');
+Route::controller(FasilitasController::class)->group(function(){
+    Route::get('/fasilitas', 'index')->name('index.fasilitas');
+    Route::get('/fasilitascreate', 'create')->name('fasilitas.create');
+    Route::post('/fasilitas', 'store')->name('fasilitas.store');
+    Route::delete('/fasilitas/{id}', 'destroy')->name('fasilitas.destroy');
+    Route::get('/fasilitasedit/{id}', 'editForm')->name('fasilitas.edit');
+    Route::put('/fasilitasedit/{id}', 'update')->name('fasilitas.update');
+});
+
 
 
 

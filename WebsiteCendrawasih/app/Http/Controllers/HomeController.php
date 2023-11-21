@@ -16,4 +16,8 @@ class HomeController extends Controller
     public function home2(){
         return view('home2');
     }
+
+    public function index(){
+        return view('index');
+    }
 }

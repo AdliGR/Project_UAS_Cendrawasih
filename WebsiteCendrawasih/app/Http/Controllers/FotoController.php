@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 use App\Models\Foto;
 use App\Models\Gallery;
 
@@ -66,12 +67,22 @@ class FotoController extends Controller
                 $fileExist = Foto::where('nama_file', $nama_file)->exists();
     
                 if (!$fileExist) {
+                    // Simpan gambar ke public/foto
                     $file_path = $file->storeAs('', $nama_file, 'public_foto');
+    
+                    // Compress dan simpan ke public/foto_prev
+                    $compressedImage = Image::make(public_path("foto/{$nama_file}"))
+                        ->resize(300, 200, function ($constraint) {
+                            $constraint->aspectRatio();
+                        });
+    
+                    $compressedImage->save(public_path("foto_prev/{$nama_file}"));
     
                     Foto::create([
                         'nama_file' => $nama_file,
                         'acara' => $acara,
-                        'file_path' => 'foto/' . $nama_file,
+                        'file_path_foto' => 'foto/' . $nama_file,
+                        'file_path_foto_comp' => 'foto_prev/' . $nama_file,
                     ]);
                 } else {
                     return redirect()->route('foto.store')->with('error', 'File sudah ada.');

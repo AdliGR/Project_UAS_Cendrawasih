@@ -14,7 +14,7 @@
 
   <link rel="icon" type="image/png" href="/material-dashboard-master/assets/img/favicon.png">
 
-  <title>Brighton</title>
+  <title>Sekolah Kristen Cendrawasih</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
@@ -87,25 +87,22 @@
                 <div class="col-md-6">
                   <div class="detail-box">
                     <h1>
-                      A Perfect Learning Center <br />
+                      Welcome to <br />
                       <span>
-                        For Your Kids
+                        Sekolah Kristen Cendrawasih
                       </span>
                     </h1>
                     <p>
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum is that it has a more-or-less
-                      normal distribution of letters, as
+              
                     </p>
-                    <div class="btn-box">
+                    <!-- <div class="btn-box">
                       <a href="" class="btn-1">
                         Read More
                       </a>
                       <a href="" class="btn-2">
                         Contact us
                       </a>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -115,25 +112,22 @@
                 <div class="col-md-6">
                   <div class="detail-box">
                     <h1>
-                      A Perfect Learning Center <br />
+                      Akreditasi <br />
                       <span>
-                        For Your Kids
+                        SMK Kristen Cendrawasih
                       </span>
                     </h1>
                     <p>
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum is that it has a more-or-less
-                      normal distribution of letters, as
+                      
                     </p>
-                    <div class="btn-box">
+                    <!-- <div class="btn-box">
                       <a href="" class="btn-1">
                         Read More
                       </a>
                       <a href="" class="btn-2">
                         Contact us
                       </a>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>

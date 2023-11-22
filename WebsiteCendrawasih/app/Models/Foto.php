@@ -14,7 +14,8 @@ class Foto extends Model
     protected $fillable = [
         'nama_file', 
         'acara', 
-        'file_path'
+        'file_path_foto',
+        'file_path_foto_comp'
     ];
 
     // public function gallery()

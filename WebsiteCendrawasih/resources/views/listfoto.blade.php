@@ -24,6 +24,30 @@
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <style>
+    .fullscreen-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    .fullscreen-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .fullscreen-modal img {
+        object-fit: contain;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -115,45 +139,41 @@
                     <a href="{{ route('Galery') }}" class="btn btn-primary">Kembali</a>
                 </form>
             </div>
-        <div class="row mt-3">
-            @foreach ($photos as $photo)
+            <div class="row mt-3">
+                @foreach ($photos as $photo)
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="{{ asset($photo->file_path) }}" class="card-img-top" alt="Foto Acara">
+                        <img src="{{ asset($photo->file_path_foto_comp) }}" class="card-img-top" alt="Foto Acara" onclick="openFullscreen('{{ asset($photo->file_path_foto) }}')">
                         <div class="card-body">
                             <p class="card-text">{{ $photo->caption }}</p>
                         </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
+
+                    <!-- Modal
+                    <div class="modal fade" id="myModal{{ $photo->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Gambar Acara</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{ asset($photo->file_path_foto) }}" class="img-fluid" alt="Foto Acara">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                @endforeach
+            </div>
     </div>
     <!-- end content -->
-      <footer class="footer py-4  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-                <!-- isi Apapun -->
-            </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      @include('layouts.footer')
     </div>
   </main>
   </div>
@@ -161,6 +181,26 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+      function openFullscreen(imagePath) {
+          var modal = document.createElement("div");
+          modal.id = "fullscreen-modal";
+          modal.classList.add("fullscreen-modal");
+
+          var img = document.createElement("img");
+          img.src = imagePath;
+          img.alt = "Fullscreen Image";
+          img.classList.add("fullscreen-image");
+
+          modal.appendChild(img);
+
+          document.body.appendChild(modal);
+
+          modal.onclick = function () {
+              document.body.removeChild(modal);
+          };
+      }
+  </script>
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

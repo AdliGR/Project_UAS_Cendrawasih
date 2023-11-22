@@ -63,6 +63,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'public_foto_comp' => [
+            'driver' => 'local',
+            'root' => public_path('foto_prev'),
+            'url' => env('APP_URL') . '/foto_prev',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*

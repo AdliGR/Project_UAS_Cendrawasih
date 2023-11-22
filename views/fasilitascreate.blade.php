@@ -7,10 +7,10 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/material-dashboard-master/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/material-dashboard-master/assets/img/favicon.png">
   <title>
-    Edit Fasilitas
+    Tambah Fasilitas
   </title>
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https:/fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
   <link href="/material-dashboard-master/assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="/material-dashboard-master/assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -23,7 +23,6 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -75,9 +74,9 @@
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
             <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Fasilitas</li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Fasilitas Edit</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Create</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Fasilitas Edit</h6>
+          <h6 class="font-weight-bolder mb-0">Create</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -99,37 +98,61 @@
     <!-- End Navbar -->
     <!-- content -->
     <div class="container mt-5">
-        <h2>Edit Fasilitas</h2>
-
-        @if (session('status'))
-            <div class="alert alert-success">{{ session('status') }}</div>
+        <h2>Tambah Fasilitas</h2>
+    
+        @if(session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
         @endif
-
-        <form action="{{ route('fasilitas.update', ['id' => $fasilitas->id]) }}" method="post">
+    
+        <form action="{{ route('fasilitas.store') }}" method="post">
             @csrf
-            @method('PUT')
-            <input type="hidden" name="id" value="{{ $fasilitas->id }}">
-        
             <div class="input-group input-group-outline my-3">
-                <label class="form-label" for="fasilitas"></label>
-                <input type="text" class="form-control" id="fasilitas" placeholder="Name" name="fasilitas" value="{{ $fasilitas->fasilitas }}" required>
+                <label class="form-label" for="fasilitas">Fasilitas</label>
+                <input type="text" class="form-control" id="fasilitas" name="fasilitas" required>
             </div>
-        
             <div class="input-group input-group-outline my-3">
-                <label class="form-label" for="total"></label>
-                <input type="text" class="form-control" id="total" placeholder="Total" name="total" value="{{ $fasilitas->total }}" required>
+                <label class="form-label" for="total">Total</label>
+                <input type="number" class="form-control" id="total" name="total">
             </div>
-        
             <div class="input-group input-group-outline my-3">
-                <label class="form-label" for="note"></label>
-                <textarea class="form-control" id="note" name="note" placeholder="Note" rows="3" required>{{ $fasilitas->note }}</textarea>
+                <!-- <label class="form-label" for="note">Note</label> -->
+                <textarea class="form-control" id="note" placeholder= "Note" name="note"></textarea>
             </div>
-        
-            <button type="submit" class="btn btn-primary">Update Fasilitas</button>
+            @if (session('status'))
+                <div class="alert alert-success">{{ session('status') }}</div>
+            @endif
+            <button type="submit" class="btn bg-gradient-success">Tambah</button>
+            <a href="{{ route('index.fasilitas') }}" class="btn btn-primary">Kembali</a>
         </form>
     </div>
     <!-- end content -->
-      @include('layouts.footer')
+      <footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+                <!-- isi Apapun -->
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   </main>
   </div>

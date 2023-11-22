@@ -7,10 +7,10 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/material-dashboard-master/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/material-dashboard-master/assets/img/favicon.png">
   <title>
-    Edit Fasilitas
+    List Fasiltas
   </title>
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https:/fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
   <link href="/material-dashboard-master/assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="/material-dashboard-master/assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -23,7 +23,18 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <style>
+      .table {
+          width: 100%;
+          table-layout: fixed;
+      }
+    
+      th, td {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+      }
+  </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -55,7 +66,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{{ route('index.fasilitas') }}">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{ route('index.fasilitas') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <!-- <i class="material-icons opacity-10">dashboard</i> -->
             </div>
@@ -74,10 +85,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Fasilitas</li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Fasilitas Edit</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">List Fasiltas</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Fasilitas Edit</h6>
+          <h6 class="font-weight-bolder mb-0">List Fasiltas</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -99,40 +109,85 @@
     <!-- End Navbar -->
     <!-- content -->
     <div class="container mt-5">
-        <h2>Edit Fasilitas</h2>
+        <h2>Fasilitas List</h2>
 
+        <a href="{{ route('fasilitas.create') }}" class="btn bg-gradient-info">Tambah Fasilitas</a>
+    
         @if (session('status'))
             <div class="alert alert-success">{{ session('status') }}</div>
         @endif
-
-        <form action="{{ route('fasilitas.update', ['id' => $fasilitas->id]) }}" method="post">
-            @csrf
-            @method('PUT')
-            <input type="hidden" name="id" value="{{ $fasilitas->id }}">
-        
-            <div class="input-group input-group-outline my-3">
-                <label class="form-label" for="fasilitas"></label>
-                <input type="text" class="form-control" id="fasilitas" placeholder="Name" name="fasilitas" value="{{ $fasilitas->fasilitas }}" required>
-            </div>
-        
-            <div class="input-group input-group-outline my-3">
-                <label class="form-label" for="total"></label>
-                <input type="text" class="form-control" id="total" placeholder="Total" name="total" value="{{ $fasilitas->total }}" required>
-            </div>
-        
-            <div class="input-group input-group-outline my-3">
-                <label class="form-label" for="note"></label>
-                <textarea class="form-control" id="note" name="note" placeholder="Note" rows="3" required>{{ $fasilitas->note }}</textarea>
-            </div>
-        
-            <button type="submit" class="btn btn-primary">Update Fasilitas</button>
-        </form>
+        @if (session('error'))
+            <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
+                            
+        @if(count($fasilitas) > 0)
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Fasilitas</th>
+                        <th>Total</th>
+                        <th>Note</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($fasilitas as $key => $fasilitasItem)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $fasilitasItem->fasilitas }}</td>
+                            <td>{{ $fasilitasItem->total }}</td>
+                            <td>{{ $fasilitasItem->note }}</td>
+                            <td>
+                                <a href="{{ route('fasilitas.edit', $fasilitasItem->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                            </td>
+                            <td>
+                            <form action="{{ route('fasilitas.destroy', $fasilitasItem->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Delete</button>
+                            </form>
+                        </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @else
+            <p>No fasilitas found.</p>
+        @endif
     </div>
     <!-- end content -->
-      @include('layouts.footer')
+      <footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+                <!-- isi Apapun -->
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   </main>
   </div>
+  <!-- sript tambahan -->
+
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

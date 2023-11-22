@@ -54,18 +54,21 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users|max:255',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:6',
         ]);
 
-        try {
-            $user = User::create([
-                'name' => $validatedData['name'],
-                'email' => $validatedData['email'],
-                'password' => bcrypt($validatedData['password']), // Menggunakan bcrypt untuk mengenkripsi password
-            ]);
-            return redirect()->route('users.create')->with('status', 'User created successfully!');
-        } catch (\Exception $e) {
-            return redirect()->route('users.create')->with('error', 'Error creating user: ' . $e->getMessage());
-        }
+        $isAdmin = $request->has('is_admin') ? 1 : 0;
+
+        $user = new User([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => bcrypt($validatedData['password']),
+            'is_admin' => $isAdmin,
+        ]);
+
+        $user->save();
+
+
+        return redirect()->route('users.create')->with('status', 'User berhasil dibuat!');
     }
 }

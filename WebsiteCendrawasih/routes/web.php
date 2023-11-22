@@ -38,13 +38,9 @@ Route::get('/AdminDashboard', [DashboardController::class, 'Admindashboard'])->n
 //tambah user
 Route::controller(UserController::class)->group(function(){
     Route::get('/listusers',  'showuserlist')->name('showuserlist');
-    Route::get('/users',  'create')->name('users.create');
-    Route::post('/users/store',  'store')->name('users.store');
+    Route::get('/user/create',  'create')->name('users.create');
+    Route::post('/user/store',  'store')->name('users.store');
     Route::delete('/users/{id}',  'destroy')->name('users.destroy');
-    Route::get('/listusers', 'showuserlist')->name('showuserlist');
-    Route::get('/users', 'create')->name('users.create');
-    Route::post('/users/store', 'store')->name('users.store');
-    Route::delete('/users/{id}', 'destroy')->name('users.destroy');
 });
 
 //galeri

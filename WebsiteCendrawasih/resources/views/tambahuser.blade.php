@@ -38,7 +38,14 @@
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        
+      <li class="nav-item">
+          <a class="nav-link text-white active bg-gradient-primary" href="{{ route('Admindashboard') }}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+            </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('Galery') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -109,38 +116,31 @@
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
-    
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
 
-        <form method="POST" action="{{ route('users.store') }}">
+        <form action="{{ route('users.store') }}" method="post">
             @csrf
 
             <div class="input-group input-group-dynamic mb-4">
                 <span class="input-group-text" id="basic-addon1"></span>
-                <!-- <label for="name">Name:</label> -->
-                <input type="text" class="form-control" placeholder="Username" name="name" aria-label="Username" aria-describedby="basic-addon1" required>
+                <input type="text" name="name" class="form-control" placeholder="Username" name="name" aria-label="Username" aria-describedby="basic-addon1" required>
             </div>
 
             <div class="input-group input-group-dynamic mb-4">
                 <span class="input-group-text" id="basic-addon2">@gmail.com</span>
-                <!-- <label for="email">Email:</label> -->
-                <input type="email" placeholder="Email" class="form-control" name="email" required>
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
             </div>
 
             <div class="input-group input-group-dynamic mb-4">
-                <!-- <label for="password">Password:</label> -->
-                <input type="password" class="form-control" placeholder="Password" name="password" required>
+                <label for="password"></label>
+                <input type="password" name="password" placeholder="Password" class="form-control" required>
             </div>
-            <br>
-            <button type="submit" class="btn bg-gradient-success">Create User</button>
+
+            <div class="form-check mb-4">
+                <input type="checkbox" name="is_admin" class="form-check-input">
+                <label for="is_admin" class="form-check-label">Is Admin</label>
+            </div>
+
+            <button type="submit" class="btn bg-gradient-success">Submit</button>
             <a href="{{ route('showuserlist') }}" class="btn btn-primary">Kembali</a>
         </form>
     </div>

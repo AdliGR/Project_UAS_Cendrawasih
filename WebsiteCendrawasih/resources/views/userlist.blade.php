@@ -50,7 +50,14 @@
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        
+      <li class="nav-item">
+          <a class="nav-link text-white" href="{{ route('Admindashboard') }}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+            </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('Galery') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -119,7 +126,7 @@
             <div class="alert alert-success">{{ session('status') }}</div>
         @endif
         <div class="mb-3">
-            <button id="addUserBtn" class="btn btn-info" onclick="checkEmail()">Tambah User</button>
+            <a href="{{ route('users.create') }}" class="btn btn-info">Tambah User</a>
         </div>
 
         <table class="table">
@@ -128,6 +135,7 @@
                     <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
+                    <th>Is Admin</th>
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -137,6 +145,7 @@
                         <td>{{ $key + 1 }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
+                        <td>{{ $user->is_admin ? 'Yes' : 'No' }}</td>
                         <td>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                                 @csrf
@@ -158,19 +167,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    function checkEmail() {
-            var email = prompt("Masukkan alamat email:");
-            
-            // Pemeriksaan untuk keberadaan angka 1 dalam email
-            if (email && email.includes("1")) {
-                // Email memenuhi syarat, arahkan ke halaman tambah user
-                window.location.href = "{{ route('users.create') }}";
-            } else {
-                alert("Hanya email khusus yang dapat menambahkan User");
-            }
-        }
-    </script>
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

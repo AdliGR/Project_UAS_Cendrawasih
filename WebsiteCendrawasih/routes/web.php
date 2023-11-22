@@ -49,7 +49,7 @@ Route::post('/tambah-event', [EventController::class, 'store'])->name('events.st
 Route::get('/tambah-foto', [FotoController::class, 'addfoto'])->name('addfoto');
 Route::post('/tambah-foto', [FotoController::class, 'store'])->name('foto.store');
 
-Route::get('/listfoto', [FotoController::Class, 'listfoto'])->name('listfoto');
+Route::get('/listfoto', [FotoController::class, 'listfoto'])->name('listfoto');
 Route::delete('/deletePhoto', [FotoController::class, 'deletePhoto'])->name('deletePhoto');
 
 //fasilitas

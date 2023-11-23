@@ -120,6 +120,7 @@
         <h2>Fasilitas List</h2>
 
         <a href="{{ route('fasilitas.create') }}" class="btn bg-gradient-info">Tambah Fasilitas</a>
+        <a href="{{ route('faslitas.excelDL') }}" class="btn btn-success">Download Data Fasilitas</a>
     
         @if (session('status'))
             <div class="alert alert-success">{{ session('status') }}</div>
@@ -127,9 +128,13 @@
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
+
+        <div class="input-group input-group-dynamic mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
+        </div>
                             
         @if(count($fasilitas) > 0)
-            <table class="table text-center">
+            <table class="table text-center" id="fasilitasTable">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -171,7 +176,37 @@
   </main>
   </div>
   <!-- sript tambahan -->
+  <script>
+      document.getElementById('searchInput').addEventListener('input', function () {
+          var searchText = this.value.toLowerCase();
+          var table = document.getElementById('fasilitasTable');
+          var rows = table.getElementsByTagName('tr');
 
+          for (var i = 1; i < rows.length; i++) {
+              var row = rows[i];
+              var cells = row.getElementsByTagName('td');
+              var shouldHide = true;
+
+              for (var j = 1; j < cells.length - 1; j++) {
+                  var cellText = cells[j].innerText.toLowerCase();
+                  if (cellText.indexOf(searchText) > -1) {
+                      shouldHide = false;
+                      break;
+                  }
+              }
+
+              row.style.display = shouldHide ? 'none' : 'table-row';
+          }
+      });
+  </script>
+  <script>
+      setTimeout(function() {
+          var alert = document.querySelector('.alert-success');
+          if (alert) {
+              alert.style.display = 'none';
+          }
+      }, 3000);
+  </script>
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

@@ -140,6 +140,16 @@
     </div>
   </main>
   </div>
+  <!-- JS tambahan -->
+  <script>
+      setTimeout(function() {
+          var alert = document.querySelector('.alert-success');
+          if (alert) {
+              alert.style.display = 'none';
+          }
+      }, 3000);
+  </script>
+
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

@@ -23,7 +23,7 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -105,8 +105,65 @@
     </nav>
     <!-- End Navbar -->
     <!-- content -->
+    <div class="container mt-5">
 
-    asssssssssssssssssssssssssssssssss
+        <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <a href="{{ route('Galery') }}"><h5 class="mb-4">Gallery list</h5></a>
+              </tr>
+              <tr>
+                  <th>No</th>
+                  <th>Name Event</th>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>List foto</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($galleries as $key => $gallery)
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $gallery->name_event }}</td>
+                        <td>{{ $gallery->date }}</td>
+                        <td>{{ $gallery->deskripsi }}</td>
+                        <td>
+                            <a href="{{ route('listfoto', ['name_event' => $gallery->name_event]) }}" class="btn btn-primary">View</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="container mt-5">
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <a href="{{ route('index.fasilitas') }}"><h5 class="mb-4">Fasilitas</h5></a>
+              </tr>
+                <tr>
+                    <th>No</th>
+                    <th>Fasilitas</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($fasilitas as $key => $fasilita)
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $fasilita->fasilitas }}</td>
+                        <td>{{ $fasilita->total }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+
     <!-- end content -->
       @include('layouts.footer')
     </div>

@@ -64,6 +64,7 @@ Route::controller(FasilitasController::class)->group(function(){
     Route::delete('/fasilitas/{id}', 'destroy')->name('fasilitas.destroy');
     Route::get('/fasilitasedit/{id}', 'editForm')->name('fasilitas.edit');
     Route::put('/fasilitasedit/{id}', 'update')->name('fasilitas.update');
+    Route::get('/download-excel', 'downloadExcel')->name('faslitas.excelDL');
 });
 
 

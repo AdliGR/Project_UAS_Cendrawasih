@@ -23,6 +23,7 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
   <style>
       .table {
@@ -129,17 +130,21 @@
             <a href="{{ route('users.create') }}" class="btn btn-info">Tambah User</a>
         </div>
 
-        <table class="table">
+        <div class=" input-group input-group-dynamic mb-4">
+            <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
+        </div>
+
+        <table class="table" id="usersTable">
             <thead>
                 <tr class="text-center">
                     <th>No</th>
                     <th>Nama</th>
                     <th>Email</th>
-                    <th>Is Admin</th>
+                    <th>Admin</th>
                     <th>Delete</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody data-aos="fade-up">
                 @foreach($users as $key => $user)
                     <tr class="text-center">
                         <td>{{ $key + 1 }}</td>
@@ -167,6 +172,46 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+      setTimeout(function() {
+          var alert = document.querySelector('.alert-success');
+          if (alert) {
+              alert.style.display = 'none';
+          }
+      }, 3000);
+  </script>
+  <script>
+      AOS.init({
+          duration: 800,
+          offset: 200, 
+          easing: 'ease-in-out', 
+          once: true
+      });
+  </script>
+  <script>
+      document.getElementById('searchInput').addEventListener('input', function () {
+          var searchText = this.value.toLowerCase();
+          var table = document.getElementById('usersTable');
+          var rows = table.getElementsByTagName('tr');
+
+          for (var i = 1; i < rows.length; i++) {
+              var row = rows[i];
+              var cells = row.getElementsByTagName('td');
+              var shouldHide = true;
+
+              for (var j = 1; j < cells.length - 1; j++) {
+                  var cellText = cells[j].innerText.toLowerCase();
+                  if (cellText.indexOf(searchText) > -1) {
+                      shouldHide = false;
+                      break;
+                  }
+              }
+
+              row.style.display = shouldHide ? 'none' : 'table-row';
+          }
+      });
+  </script>
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

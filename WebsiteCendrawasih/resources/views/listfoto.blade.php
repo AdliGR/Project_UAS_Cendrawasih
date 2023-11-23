@@ -23,6 +23,7 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
   <style>
     .fullscreen-modal {
@@ -63,7 +64,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
       <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="{{ route('Admindashboard') }}">
+          <a class="nav-link text-white" href="{{ route('Admindashboard') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <!-- <i class="material-icons opacity-10">dashboard</i> -->
             </div>
@@ -147,12 +148,12 @@
                 </form>
             </div>
             <div class="row mt-3">
-                @foreach ($photos as $photo)
+                @foreach ($photos as $key => $photo)
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <img src="{{ asset($photo->file_path_foto_comp) }}" class="card-img-top" alt="Foto Acara" onclick="openFullscreen('{{ asset($photo->file_path_foto) }}')">
                         <div class="card-body">
-                            <p class="card-text">{{ $photo->caption }}</p>
+                            <p class="card-text">{{ $photo->nama_file }}</p>
                         </div>
                     </div>
                 </div>
@@ -188,6 +189,15 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+      AOS.init({
+          duration: 800,
+          offset: 200, 
+          easing: 'ease-in-out', 
+          once: true
+      });
+  </script>
   <script>
       function openFullscreen(imagePath) {
           var modal = document.createElement("div");

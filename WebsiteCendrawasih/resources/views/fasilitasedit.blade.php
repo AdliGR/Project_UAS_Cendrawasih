@@ -125,7 +125,7 @@
         
             <div class="input-group input-group-outline my-3">
                 <label class="form-label" for="total"></label>
-                <input type="text" class="form-control" id="total" placeholder="Total" name="total" value="{{ $fasilitas->total }}" required>
+                <input type="number" class="form-control" id="total" placeholder="Total" name="total" value="{{ $fasilitas->total }}" required>
             </div>
         
             <div class="input-group input-group-outline my-3">
@@ -147,6 +147,14 @@
   <script src="/material-dashboard-master/assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="/material-dashboard-master/assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="/material-dashboard-master/assets/js/plugins/chartjs.min.js"></script>
+  <script>
+      setTimeout(function() {
+          var alert = document.querySelector('.alert-success');
+          if (alert) {
+              alert.style.display = 'none';
+          }
+      }, 3000);
+  </script>
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 

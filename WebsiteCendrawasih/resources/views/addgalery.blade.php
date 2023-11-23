@@ -129,11 +129,15 @@
             <div class="alert alert-success">{{ session('status') }}</div>
         @endif
 
-        <table class="table">
+        <div class="input-group input-group-dynamic mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
+        </div>
+
+        <table class="table searchable ">
             <thead>
                 <tr class="text-center">
                     <th>No</th>
-                    <th>Judul</th>
+                    <th>Nama Event</th>
                     <th>Deskripsi</th>
                     <th>Daftar Foto</th>
                     <th>Delete</th>
@@ -174,6 +178,14 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
+      setTimeout(function() {
+          var alert = document.querySelector('.alert-success');
+          if (alert) {
+              alert.style.display = 'none';
+          }
+      }, 3000);
+  </script>
+  <script>
       // Add your JavaScript code here
       document.addEventListener("DOMContentLoaded", function () {
           var rows = document.querySelectorAll(".clickable-row");
@@ -184,6 +196,16 @@
                   if (href) {
                       window.location.href = href;
                   }
+              });
+          });
+      });
+  </script>
+  <script>
+      $(document).ready(function () {
+          $("#searchInput").on("keyup", function () {
+              var value = $(this).val().toLowerCase();
+              $("table.searchable tbody tr").filter(function () {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
               });
           });
       });

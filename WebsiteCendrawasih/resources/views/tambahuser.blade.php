@@ -132,7 +132,10 @@
 
             <div class="input-group input-group-dynamic mb-4">
                 <label for="password"></label>
-                <input type="password" name="password" placeholder="Password" class="form-control" required>
+                <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+                <span class="input-group-addon">
+                    <i class="fa fa-eye" id="togglePassword"></i>
+                </span>
             </div>
 
             <div class="form-check mb-4">
@@ -155,6 +158,25 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+      const passwordInput = document.getElementById('password');
+      const togglePasswordButton = document.getElementById('togglePassword');
+
+      togglePasswordButton.addEventListener('click', function () {
+          const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordInput.setAttribute('type', type);
+          // Ganti ikon mata terbuka/tutup sesuai dengan status password
+          togglePasswordButton.classList.toggle('fa-eye-slash');
+      });
+  </script>
+  <script>
+      setTimeout(function() {
+          var alert = document.querySelector('.alert-success');
+          if (alert) {
+              alert.style.display = 'none';
+          }
+      }, 3000);
+  </script>
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

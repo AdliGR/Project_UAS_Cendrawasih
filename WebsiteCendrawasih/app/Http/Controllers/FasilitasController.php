@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Fasilitas;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\FasilitasExport;
 
 class FasilitasController extends Controller
 {
@@ -55,6 +57,11 @@ class FasilitasController extends Controller
         $fasilitas->save();
 
         return redirect(route('index.fasilitas'))->with('status', 'Fasilitas updated successfully');
+    }
+
+    public function downloadExcel()
+    {
+        return Excel::download(new FasilitasExport, 'fasilitas.xlsx');
     }
 
 

@@ -115,6 +115,7 @@
     <!-- content -->
     <div class="container mt-5">
         <a href="{{ route('index.acara')}}"><h2>Upcoming Events</h2></a>
+        <br>
         <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             @foreach($events->chunk(3) as $eventChunk)
@@ -141,11 +142,13 @@
                                         <div class="modal-body">
                                             <p>{{ $event->detail_acara }}</p>
                                             <p>Date: {{ $event->tanggal_acara }}</p>
-                                            <p>Time: {{ $event->jam }}</p>
+                                            <p id="countdown{{ $event->id }}"></p>
+                                            <!-- <p>Time: {{ $event->jam }}</p> -->
                                             <p>Organizer: {{ $event->penanggung_jawab }}</p>
                                         </div>
-                                        <div class="modal-footer">
-                                        </div>
+                                        <!-- <div class="modal-footer">
+                                            <p id="countdown{{ $event->id }}"></p>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +171,7 @@
         <table class="table table-bordered table-striped text-center">
             <thead>
                 <tr>
-                    <a href="{{ route('Galery') }}"><h5 class="mb-4">Gallery Acara</h5></a>
+                    <a href="{{ route('Galery') }}"><h3 class="mb-4">Gallery Acara</h3></a>
                 </tr>
                 <tr>
                     <th>No</th>
@@ -193,14 +196,12 @@
             </tbody>
         </table>
     </div>
-    <br>
-    <hr>
-    <br>
+    <br>  
     <div class="container mt-5">
         <table class="table table-bordered table-striped text-center">
             <thead>
                 <tr>
-                    <a href="{{ route('index.fasilitas') }}"><h5 class="mb-4">Fasilitas</h5></a>
+                    <a href="{{ route('index.fasilitas') }}"><h3 class="mb-4">Fasilitas</h3></a>
                 </tr>
                 <tr>
                     <th>No</th>
@@ -235,6 +236,29 @@
       function showModal(eventId) {
           $('#eventModal' + eventId).modal('show');
       }
+  </script>
+  <script>
+      var countdownElement = document.getElementById('countdown{{ $event->id }}');
+
+      var eventDate = new Date('{{ $event->tanggal_acara }}').getTime();
+
+      var countdownInterval = setInterval(function () {
+          var now = new Date().getTime();
+
+          var timeDifference = eventDate - now;
+
+          if (timeDifference <= 0) {
+              clearInterval(countdownInterval);
+              countdownElement.innerHTML = "Acara sudah dimulai!";
+          } else {
+              var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+              countdownElement.innerHTML = days + " hari " + hours + " jam " + minutes + " menit " + seconds + " detik ";
+          }
+      }, 1000);
   </script>
 
   <!--   Core JS Files   -->

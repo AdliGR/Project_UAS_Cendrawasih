@@ -121,13 +121,32 @@
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                     <div class="card-group">
                         @foreach($eventChunk as $event)
-                            <div class="card d-inline-block mb-3" style="margin-right: 15px;">
+                            <div class="card d-inline-block mb-3" style="margin-right: 15px;" onclick="showModal('{{ $event->id }}')">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $event->nama_acara }}</h5>
-                                    <p class="card-text">{{ $event->detail_acara }}</p>
+                                    <p class="card-text">{{ Str::limit($event->detail_acara, 25) }}
                                     <p class="card-text">Date: {{ $event->tanggal_acara }}</p>
                                     <p class="card-text">Time: {{ $event->jam }}</p>
                                     <p class="card-text">Organizer: {{ $event->penanggung_jawab }}</p>
+                                </div>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="eventModal{{ $event->id }}" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel{{ $event->id }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="eventModalLabel{{ $event->id }}">{{ $event->nama_acara }}</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>{{ $event->detail_acara }}</p>
+                                            <p>Date: {{ $event->tanggal_acara }}</p>
+                                            <p>Time: {{ $event->jam }}</p>
+                                            <p>Organizer: {{ $event->penanggung_jawab }}</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -210,7 +229,14 @@
   <!-- tambahan js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+      function showModal(eventId) {
+          $('#eventModal' + eventId).modal('show');
+      }
+  </script>
+
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/material-dashboard-master/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/material-dashboard-master/assets/img/favicon.png">
   <title>
-    Add Event
+    Add Up Coming Event
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -90,10 +90,10 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Galeri List</li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Add Event</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Upcoming Events</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Add</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Add Event</h6>
+          <h6 class="font-weight-bolder mb-0">Add Acara</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -115,7 +115,7 @@
     <!-- End Navbar -->
     <!-- content -->
     <div class="container">
-        <h2>Add New Event</h2>
+        <h2>Add Acara Selanjutnya</h2>
         <form action="{{ route('events.stored') }}" method="POST">
             @csrf
             <div class="input-group input-group-dynamic mb-4">

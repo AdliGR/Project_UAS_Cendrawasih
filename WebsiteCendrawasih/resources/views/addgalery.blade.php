@@ -156,7 +156,7 @@
                     <tr class="text-center">
                         <td>{{ $key + 1 }}</td>
                         <td>{{ $gallery->name_event}}</td>
-                        <td>{{ $gallery->deskripsi }}</td>
+                        <td>{{ Str::limit($gallery->deskripsi, 25) }}</td>
                         <td>
                             <a href="{{ route('listfoto', ['name_event' => $gallery->name_event]) }}" class="btn bg-gradient-warning">
                                 Lihat Foto

@@ -159,7 +159,7 @@
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $fasilitasItem->fasilitas }}</td>
                             <td>{{ $fasilitasItem->total }}</td>
-                            <td>{{ $fasilitasItem->note }}</td>
+                            <td>{{ Str::limit($fasilitasItem->note, 25) }}</td>
                             <td>
                                 <a href="{{ route('fasilitas.edit', $fasilitasItem->id) }}" class="btn btn-warning btn-sm">Edit</a>
                             </td>

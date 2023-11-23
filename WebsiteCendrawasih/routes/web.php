@@ -26,12 +26,12 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/', [HomeController::class, 'home2'])->name('home2');
 Route::get('/index', [HomeController::class, 'index'])->name('index');
 
 
 //refrence
-Route::get('/home2', [HomeController::class, 'home2'])->name('home2');
+Route::get('/home2', [HomeController::class, 'home'])->name('home');
 
 Route::get('/AdminDashboard', [DashboardController::class, 'Admindashboard'])->name('Admindashboard');
 

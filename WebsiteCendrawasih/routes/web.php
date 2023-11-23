@@ -8,6 +8,7 @@ use App\Http\Controllers\FotoController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AcaraController;
 
 
 
@@ -65,6 +66,15 @@ Route::controller(FasilitasController::class)->group(function(){
     Route::get('/fasilitasedit/{id}', 'editForm')->name('fasilitas.edit');
     Route::put('/fasilitasedit/{id}', 'update')->name('fasilitas.update');
     Route::get('/download-excel', 'downloadExcel')->name('faslitas.excelDL');
+});
+
+Route::controller(AcaraController::class)->group(function(){
+    Route::get('/events', 'index')->name('index.acara');
+    Route::get('/events/create', 'create')->name('events.created');
+    Route::post('/events', 'store')->name('events.stored');
+    Route::get('/events/{id}/edit', 'editacara')->name('editacara');
+    Route::put('/events/{id}', 'updateacara')->name('updateacara');
+    Route::delete('/events/{id}', 'destroy')->name('events.destroy');
 });
 
 

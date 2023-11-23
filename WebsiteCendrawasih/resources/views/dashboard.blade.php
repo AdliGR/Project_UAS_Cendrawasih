@@ -23,7 +23,7 @@
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -70,6 +70,14 @@
             <span class="nav-link-text ms-1">List Fasilitas</span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{{ route('index.acara') }}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+            </div>
+            <span class="nav-link-text ms-1">Up Comming Event</span>
+          </a>
+        </li>
       </ul>
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
@@ -106,19 +114,50 @@
     <!-- End Navbar -->
     <!-- content -->
     <div class="container mt-5">
-
-        <table class="table table-bordered text-center">
+        <a href="{{ route('index.acara')}}"><h2>Upcoming Events</h2></a>
+        <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @foreach($events->chunk(3) as $eventChunk)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                    <div class="card-group">
+                        @foreach($eventChunk as $event)
+                            <div class="card d-inline-block mb-3" style="margin-right: 15px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $event->nama_acara }}</h5>
+                                    <p class="card-text">{{ $event->detail_acara }}</p>
+                                    <p class="card-text">Date: {{ $event->tanggal_acara }}</p>
+                                    <p class="card-text">Time: {{ $event->jam }}</p>
+                                    <p class="card-text">Organizer: {{ $event->penanggung_jawab }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            @endforeach
+        </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <br>
+        <hr>
+        <table class="table table-bordered table-striped text-center">
             <thead>
-              <tr>
-                <a href="{{ route('Galery') }}"><h5 class="mb-4">Gallery list</h5></a>
-              </tr>
-              <tr>
-                  <th>No</th>
-                  <th>Name Event</th>
-                  <th>Date</th>
-                  <th>Description</th>
-                  <th>List foto</th>
-              </tr>
+                <tr>
+                    <a href="{{ route('Galery') }}"><h5 class="mb-4">Gallery Acara</h5></a>
+                </tr>
+                <tr>
+                    <th>No</th>
+                    <th>Name Event</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>List foto</th>
+                </tr>
             </thead>
             <tbody>
                 @foreach ($galleries as $key => $gallery)
@@ -139,12 +178,11 @@
     <hr>
     <br>
     <div class="container mt-5">
-
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped text-center">
             <thead>
-              <tr>
-                <a href="{{ route('index.fasilitas') }}"><h5 class="mb-4">Fasilitas</h5></a>
-              </tr>
+                <tr>
+                    <a href="{{ route('index.fasilitas') }}"><h5 class="mb-4">Fasilitas</h5></a>
+                </tr>
                 <tr>
                     <th>No</th>
                     <th>Fasilitas</th>
@@ -169,6 +207,10 @@
     </div>
   </main>
   </div>
+  <!-- tambahan js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  
   <!--   Core JS Files   -->
   <script src="/material-dashboard-master/assets/js/core/popper.min.js"></script>
   <script src="/material-dashboard-master/assets/js/core/bootstrap.min.js"></script>

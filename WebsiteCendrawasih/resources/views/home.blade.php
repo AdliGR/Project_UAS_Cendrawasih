@@ -38,6 +38,11 @@
           margin-left: auto;
           margin-right: auto;
           max-width: 1500px;
+          text-align: center;
+      }
+
+      .Gallery h2 {
+          margin-bottom: 20px;
       }
 
       .carousel-item {
@@ -49,6 +54,9 @@
       .card-body {
           opacity: 0;
           transition: opacity 0.3s ease-in-out;
+          background-color: rgba(60, 119, 177, 0.7);
+          color: white;
+          padding: 100px;
       }
 
       .card:hover .card-body {
@@ -607,6 +615,7 @@
   <!-- about section -->
   <section class="Gallery">
     <div class="container-fluid">
+    <h2>Gallery</h2>
         <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @foreach($galleries->chunk(3) as $galleryChunk)

@@ -142,8 +142,6 @@
                                         <div class="modal-body">
                                             <p>{{ $event->detail_acara }}</p>
                                             <p>Date: {{ $event->tanggal_acara }}</p>
-                                            <p id="countdown{{ $event->id }}"></p>
-                                            <!-- <p>Time: {{ $event->jam }}</p> -->
                                             <p>Organizer: {{ $event->penanggung_jawab }}</p>
                                         </div>
                                         <!-- <div class="modal-footer">
@@ -166,6 +164,7 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+        <br>
         <br>
         <hr>
         <table class="table table-bordered table-striped text-center">
@@ -236,29 +235,6 @@
       function showModal(eventId) {
           $('#eventModal' + eventId).modal('show');
       }
-  </script>
-  <script>
-      var countdownElement = document.getElementById('countdown{{ $event->id }}');
-
-      var eventDate = new Date('{{ $event->tanggal_acara }}').getTime();
-
-      var countdownInterval = setInterval(function () {
-          var now = new Date().getTime();
-
-          var timeDifference = eventDate - now;
-
-          if (timeDifference <= 0) {
-              clearInterval(countdownInterval);
-              countdownElement.innerHTML = "Acara sudah dimulai!";
-          } else {
-              var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-              var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-              var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-              var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-              countdownElement.innerHTML = days + " hari " + hours + " jam " + minutes + " menit " + seconds + " detik ";
-          }
-      }, 1000);
   </script>
 
   <!--   Core JS Files   -->

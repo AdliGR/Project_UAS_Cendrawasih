@@ -27,7 +27,7 @@ use App\Http\Controllers\AcaraController;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'home2'])->name('home2');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/index', [HomeController::class, 'index'])->name('index');
 
 

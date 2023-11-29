@@ -78,28 +78,50 @@
       <div class="row">
         <div class="col-md-6">
           <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
+            <img src="images/gedung.jpg" alt="">
           </div>
         </div>
         <div class="col-md-5 col-lg-4">
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                A Few words about us
+                VISI DAN MISI SMK KRISTEN CENDRAWASIH
               </h2>
             </div>
-            <p>
-              It is a long established fact that a reader will be distracted by the readable content of a page when
-              looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-              of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-              desktop publishing packages and web
-            </p>
-            <div>
-              <a href="">
-                Read More
-              </a>
+            <br />
+            <div class="about_section">
+              <div class="visi-box">
+                  <h3>VISI</h3>
+                  <p>
+                      “Menciptakan lulusan yang Jujur, Unggul, Kreatif, Peduli Lingkungan dan Siap Kerja (JUTEKS PLUS) dan
+                      berkualitas, terampil dalam berkarya dan berakhlak mulia di era globalisasi”
+                  </p>
+              </div>
+              <div class="misi-box">
+                <div class="misi-heading">
+                    <h3>MISI</h3>
+                </div>
+                <div class="misi-list">
+                    <ul>
+                        <li>Meningkatkan kualitas manajemen Pendidikan dan layanan Pendidikan</li>
+                        <li>Meningkatkan sumber daya manusia</li>
+                        <li>Meningkatkan kualitas Sarana dan Prasarana</li>
+                        <li>Meningkatkan Kualitas dan Kuantitas Tenaga Pendidik dan Kependidikan</li>
+                        <li>Meningkatkan kerjasama dengan instansi DUDIKA yang bergerak di bidang Teknologi melalui PKL (Praktek Kerja
+                            Lapangan) dan rekrutmen</li>
+                        <li>Meningkatkan kerjasama dengan orang tua peserta didik, DUDIKA, dan alumni.</li>
+                        <li>Mewujudkan Profil Pelajar Pancasila</li>
+                        <li>Mewujudkan sekolah sebagai pusat keunggulan</li>
+                        <li>Mengembangkan kurikulum sesuai dengan kebutuhan DUDIKA</li>
+                        <li>Melaksanakan kegiatan pembelajaran berbasis pada minat dan kebutuhan peserta didik dan DUDIKA yang
+                            didukung oleh Teknologi Informasi dan Komunikasi</li>
+                        <li>Mengoptimalkan pembinaan dan pembimbingan kegiatan akademik dan non-akademik</li>
+                        <li>Mewujudkan lingkungan yang sehat, bersih, dan nyaman</li>
+                    </ul>
+                </div>
             </div>
-
+                        
+          </div>
           </div>
         </div>
       </div>

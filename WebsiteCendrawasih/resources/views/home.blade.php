@@ -612,7 +612,64 @@
 
   <!-- end offer section -->
 
-  <!-- about section -->
+<!-- about section -->
+<section class="about_section ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="images/gedung.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                VISI DAN MISI SMK KRISTEN CENDRAWASIH
+              </h2>
+            </div>
+            <br />
+            <div class="about_section">
+              <div class="visi-box">
+                  <h3>VISI</h3>
+                  <p>
+                      “Menciptakan lulusan yang Jujur, Unggul, Kreatif, Peduli Lingkungan dan Siap Kerja (JUTEKS PLUS) dan
+                      berkualitas, terampil dalam berkarya dan berakhlak mulia di era globalisasi”
+                  </p>
+              </div>
+              <div class="misi-box">
+                <div class="misi-heading">
+                    <h3>MISI</h3>
+                </div>
+                <div class="misi-list">
+                    <ul>
+                        <li>Meningkatkan kualitas manajemen Pendidikan dan layanan Pendidikan</li>
+                        <li>Meningkatkan sumber daya manusia</li>
+                        <li>Meningkatkan kualitas Sarana dan Prasarana</li>
+                        <li>Meningkatkan Kualitas dan Kuantitas Tenaga Pendidik dan Kependidikan</li>
+                        <li>Meningkatkan kerjasama dengan instansi DUDIKA yang bergerak di bidang Teknologi melalui PKL (Praktek Kerja
+                            Lapangan) dan rekrutmen</li>
+                        <li>Meningkatkan kerjasama dengan orang tua peserta didik, DUDIKA, dan alumni.</li>
+                        <li>Mewujudkan Profil Pelajar Pancasila</li>
+                        <li>Mewujudkan sekolah sebagai pusat keunggulan</li>
+                        <li>Mengembangkan kurikulum sesuai dengan kebutuhan DUDIKA</li>
+                        <li>Melaksanakan kegiatan pembelajaran berbasis pada minat dan kebutuhan peserta didik dan DUDIKA yang
+                            didukung oleh Teknologi Informasi dan Komunikasi</li>
+                        <li>Mengoptimalkan pembinaan dan pembimbingan kegiatan akademik dan non-akademik</li>
+                        <li>Mewujudkan lingkungan yang sehat, bersih, dan nyaman</li>
+                    </ul>
+                </div>
+            </div>
+                        
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>
+  <!-- end about section -->
+
+  <!-- gallery section -->
   <section class="Gallery">
     <div class="container-fluid">
     <h2>Gallery</h2>

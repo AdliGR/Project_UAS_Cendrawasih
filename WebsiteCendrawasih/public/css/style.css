@@ -341,8 +341,94 @@ a:focus {
   margin-top: 25px;
 }
 
+.heading_container {
+  text-align: center; 
+}
+
+.heading_container h2 {
+  margin-bottom: 5px;
+  font-family: 'globersemibold_free', Arial, sans-serif; 
+  font-weight: bold;
+}
+
+.visi-box {
+  text-align: center;
+}
+
+.visi-box h3 {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: 'lemon_milkregular', Arial, sans-serif;
+}
+
+.visi-box p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #050505;
+  background-color: yellow; 
+  padding: 15px; 
+  border-radius: 5px; 
+  font-family: 'acremedium', Arial, sans-serif;
+}
+
+.misi-box {
+  text-align: center;
+}
+
+.misi-heading h3 {
+  color: black;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: 'lemon_milkregular', Arial, sans-serif;
+}
+
+.misi-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  column-count: 2;
+}
+
+.misi-list li {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #050505;
+  background-color: yellow; 
+  padding: 10px; 
+  margin-bottom: 10px; 
+  border-radius: 5px; 
+  font-family: 'acremedium', Arial, sans-serif;
+}
+
 .about_section .detail-box a:hover {
   background-color: #e6e600;
+}
+
+@font-face {
+  font-family: 'lemon_milkregular';
+  src: url('lemonmilk-regular-webfont.woff2') format('woff2'),
+       url('lemonmilk-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'acremedium';
+  src: url('jonathan_ball_-_acre-medium-webfont.woff2') format('woff2'),
+       url('jonathan_ball_-_acre-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'globersemibold_free';
+  src: url('glober_semibold_free-webfont.woff2') format('woff2'),
+       url('glober_semibold_free-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 .client_section {

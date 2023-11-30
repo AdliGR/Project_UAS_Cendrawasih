@@ -9,6 +9,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AcaraController;
+use App\Http\Controllers\LoginController;
 
 
 
@@ -79,5 +80,10 @@ Route::controller(AcaraController::class)->group(function(){
 
 
 
+Route::controller(LoginController::class)->group(function(){
+Route::get('/login', 'loginForm')->name('login');
+Route::post('/login','login');
+Route::post('/logout','logout')->name('logout');
+});
 
 

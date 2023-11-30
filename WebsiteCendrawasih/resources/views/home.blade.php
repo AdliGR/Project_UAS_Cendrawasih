@@ -71,7 +71,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="{{ route('home') }}">
             <img src="/material-dashboard-master/assets/img/Logo_Sekolah_Cendrawasih_resize-removebg-preview.png" alt="" />
             <!-- <span>
               Brighton
@@ -85,17 +85,16 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">
-                    Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{{ route('home') }}"> Home </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About </a>
+                  <a class="nav-link" href="{{ route('aboutus') }} "> About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="program.html"> Programs </a>
+                  <a class="nav-link" href="program.html"> Gallery </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html"> Contact us</a>
+                  <a class="nav-link" href="contact.html"> Teacher </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -701,157 +700,35 @@
 
   <!-- end about section -->
 
-  <!-- client section -->
+  <section>
+  <div class="container">
+        <h2>User List</h2>
+        <div class="row">
+            @foreach($users as $user)
+                <div class="col-md-4 mb-4">
+                    @if($user->photo)
+                        <img src="{{ asset($user->photo) }}" class="img-fluid" alt="User Photo">
+                    @endif
 
-  <section class="client_section layout_padding">
-    <div class="container layout_padding2-top">
-      <div class="heading_container">
-        <h2>
-          SCHOOL STAFF
-        </h2>
-      </div>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="client_container layout_padding">
-              <div class="img-box">
-                <img src="/brighton-html/images/client.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Rohali jonson
-                </h4>
-                <h6>
-                  customer
-                </h6>
-                <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in
-                  some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                  are
-                  going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                  the
-                  middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                </p>
-                <img src="/brighton-html/images/quote.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="client_container layout_padding">
-              <div class="img-box">
-                <img src="/brighton-html/images/client.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Rohali jonson
-                </h4>
-                <h6>
-                  customer
-                </h6>
-                <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in
-                  some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                  are
-                  going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                  the
-                  middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                </p>
-                <img src="/brighton-html/images/quote.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="client_container layout_padding">
-              <div class="img-box">
-                <img src="/brighton-html/images/client.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h4>
-                  Rohali jonson
-                </h4>
-                <h6>
-                  customer
-                </h6>
-                <p>
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                  alteration in
-                  some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                  are
-                  going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                  the
-                  middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                </p>
-                <img src="/brighton-html/images/quote.png" alt="">
-              </div>
-            </div>
-          </div>
+                    <div class="user-details">
+                        <h5>{{ $user->name }}</h5>
+                        <p>
+                            <strong>Email:</strong> {{ $user->email }}<br>
+                            <strong>Role:</strong> {{ $user->role }}<br>
+                            <strong>Admin:</strong> {{ $user->is_admin ? 'Yes' : 'No' }}<br>
+                        </p>
+                        <div class="user-actions">
+                            <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary">Edit</a>
+                            <button class="btn btn-danger delete-user-button" data-user-id="{{ $user->id }}">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
     </div>
   </section>
 
   <!-- end client section -->
-
-  <!-- contact section -->
-
-  <section class="contact_section layout_padding">
-    <div class="container ">
-      <div class="heading_container ">
-        <h2 class="">
-          Request
-          <span>
-            A call Back
-          </span>
-
-        </h2>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 ">
-          <form action="#">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" placeholder="Pone Number" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex  mt-4 ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <!-- map section -->
-          <div class="map_section">
-            <div id="map" class="w-100 h-100"></div>
-          </div>
-
-          <!-- end map section -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end contact section -->
-
 
   <!-- info section -->
   <section class="info_section layout_padding">

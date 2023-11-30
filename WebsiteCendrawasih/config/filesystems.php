@@ -70,6 +70,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'foto_guru' => [
+            'driver' => 'local',
+            'root' => public_path('foto_guru'),
+            'url' => env('APP_URL').'/foto_guru',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*

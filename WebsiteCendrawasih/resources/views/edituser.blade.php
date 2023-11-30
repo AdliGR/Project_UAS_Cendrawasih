@@ -118,7 +118,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h3>Add Teacher</h3></div>
+                    <div class="card-header"><h3>Edit User</h3></div>
 
                     <div class="card-body">
                         @if ($errors->any())
@@ -131,66 +131,58 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
 
                             <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" required>
-                            </div>
-
-                            <!-- <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
+                                <!-- <label  class="form-label" for="name">Name:</label> -->
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{ $user->name }}" required>
                             </div>
 
                             <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="password">Password</label>
-                                <input type="password" name="password" id="password" class="form-control" required>
-                            </div> -->
-
-                            <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="umur">Age</label>
-                                <input type="number" name="umur" id="umur" class="form-control" value="{{ old('umur') }}">
+                                <!-- <label  class="form-label" for="umur">Age:</label> -->
+                                <input type="number" name="umur" id="umur" class="form-control" placeholder="umur" value="{{ $user->umur }}">
                             </div>
 
                             <div class="input-group input-group-outline my-3">
-                                <!-- <label class="form-label" for="gender">Gender</label> -->
+                                <!-- <label for="gender">Gender:</label> -->
                                 <select name="gender" id="gender" class="form-control">
-                                    <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
-                                    <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
+                                    <option value="male" {{ $user->gender == 'male' ? 'selected' : '' }}>Male</option>
+                                    <option value="female" {{ $user->gender == 'female' ? 'selected' : '' }}>Female</option>
                                 </select>
                             </div>
 
                             <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="tanggal_lahir">Date of Birth:</label>
-                                <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="{{ old('tanggal_lahir') }}">
+                                <!-- <label  class="form-label" for="tanggal_lahir">Date of Birth:</label> -->
+                                <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="{{ $user->tanggal_lahir }}">
                             </div>
 
                             <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="role">Role</label>
-                                <input type="text" name="role" id="role" class="form-control" value="{{ old('role') }}">
+                                <!-- <label  class="form-label" for="role">Role:</label> -->
+                                <input type="text" name="role" id="role" class="form-control" placeholder="role" value="{{ $user->role }}">
                             </div>
 
                             <div class="input-group input-group-outline my-3">
-                                <label for="photo">Photo :    </label>
+                                <!-- <label for="photo">Photo:</label> -->
                                 <input type="file" name="photo" id="photo" class="form-control-file">
+                                @if($user->photo)
+                                    <img src="{{ asset($user->photo) }}" alt="User Photo" class="img-fluid mt-2" style="max-width: 100%;">
+                                @endif
                             </div>
 
                             <div class="form-check mb-4">
-                                <input type="checkbox" class="form-check-input" name="is_admin" id="is_admin" {{ old('is_admin') ? 'checked' : '' }}>
-                                <label class="form-check-label" for="is_admin">Admin: </label>
+                                <input type="checkbox" class="form-check-input" name="is_admin" id="is_admin" {{ $user->is_admin ? 'checked' : '' }}>
+                                <label class="form-check-label" for="is_admin">Admin:</label>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Add User</button>
+                            <button type="submit" class="btn btn-primary">Update User</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
     <!-- end content -->
       @include('layouts.footer')
     </div>

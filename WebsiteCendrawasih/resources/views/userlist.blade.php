@@ -142,34 +142,48 @@
             <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
         </div>
 
-        <table class="table" id="usersTable">
-            <thead>
-                <tr class="text-center">
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Admin</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody data-aos="fade-up">
-                @foreach($users as $key => $user)
-                    <tr class="text-center">
-                        <td>{{ $key + 1 }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->is_admin ? 'Yes' : 'No' }}</td>
-                        <td>
-                            <form action="{{ route('users.destroy', $user->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Hapus</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="row">
+            @foreach($users as $user)
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        @if($user->photo)
+                            <img src="{{ asset($user->photo) }}" class="card-img-top" alt="User Photo">
+                        @endif
+
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $user->name }}</h5>
+                            <p class="card-text">
+                                <strong>Email:</strong> {{ $user->email }}<br>
+                                <strong>Role:</strong> {{ $user->role }}<br>
+                                <strong>Admin:</strong> {{ $user->is_admin ? 'Yes' : 'No' }}<br>
+                            </p>
+                            <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary">Edit</a>
+                            <button class="btn btn-danger delete-user-button" data-user-id="{{ $user->id }}">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteUserModalLabel">Delete User</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this user?</p>
+                </div>
+                <div class="modal-footer">
+                    <form method="POST" id="deleteUserForm" action="">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete User</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- end content -->
       @include('layouts.footer')
@@ -218,6 +232,15 @@
 
               row.style.display = shouldHide ? 'none' : 'table-row';
           }
+      });
+  </script>
+  <script>
+      $(document).on('click', '.delete-user-button', function () {
+          var userId = $(this).data('user-id');
+          var deleteUrl = "{{ route('users.destroy', ['user' => ':userId']) }}";
+          deleteUrl = deleteUrl.replace(':userId', userId);
+          $('#deleteUserForm').attr('action', deleteUrl);
+          $('#deleteUserModal').modal('show');
       });
   </script>
   <!--   Core JS Files   -->

@@ -28,13 +28,6 @@ use App\Http\Controllers\LoginController;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/index', [HomeController::class, 'index'])->name('index');
-
-
-//refrence
-Route::get('/home2', [HomeController::class, 'home'])->name('home');
-
 Route::get('/AdminDashboard', [DashboardController::class, 'Admindashboard'])->name('Admindashboard');
 
 //tambah user
@@ -42,7 +35,9 @@ Route::controller(UserController::class)->group(function(){
     Route::get('/listusers',  'showuserlist')->name('showuserlist');
     Route::get('/user/create',  'create')->name('users.create');
     Route::post('/user/store',  'store')->name('users.store');
-    Route::delete('/users/{id}',  'destroy')->name('users.destroy');
+    Route::get('/users/{user}/edit', 'edit')->name('users.edit');
+    Route::put('/users/{user}', 'update')->name('users.update');
+    Route::delete('/users/{user}', 'destroy')->name('users.destroy');
 });
 
 //galeri
@@ -76,6 +71,11 @@ Route::controller(AcaraController::class)->group(function(){
     Route::get('/events/{id}/edit', 'editacara')->name('editacara');
     Route::put('/events/{id}', 'updateacara')->name('updateacara');
     Route::delete('/events/{id}', 'destroy')->name('events.destroy');
+});
+
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/', 'home')->name('home');
+    Route::get('/AboutUs', 'aboutus')->name('aboutus');
 });
 
 

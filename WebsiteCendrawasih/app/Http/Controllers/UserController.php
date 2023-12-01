@@ -80,7 +80,18 @@ class UserController extends Controller
         $firstName = $nameParts[0];
         $lastName = isset($nameParts[1]) ? $nameParts[1] : '';
 
-        $email = strtolower($firstName . '.' . $lastName) . '@cendrawasih.ac.id';
+        $title = isset($nameParts[2]) ? $nameParts[2] : '';
+
+        $title = preg_replace('/[^a-zA-Z0-9]/', '', $title);
+
+        $email = strtolower($firstName . '.' . $lastName);
+
+        if (!empty($title)) {
+            $email .= '.' . $title;
+        }
+
+        $email .= '@cendrawasih.ac.id';
+
         $password = $request->tanggal_lahir ? str_replace(['/', ''], '', $request->tanggal_lahir) : '';
 
         $request->merge([

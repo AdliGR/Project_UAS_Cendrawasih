@@ -163,7 +163,7 @@
                             </div>
 
                             <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="tanggal_lahir">Date of Birth:</label>
+                                <!-- <label class="form-label" for="tanggal_lahir">Date of Birth:</label> -->
                                 <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="{{ old('tanggal_lahir') }}">
                             </div>
 

@@ -200,15 +200,18 @@ a:focus {
 .slider_section .detail-box .btn-box .btn-1 {
   display: inline-block;
   padding: 12px 45px;
-  background-color: #ffff00;
-  color: #050505;
-  border-radius: 0;
+  background-color: transparent; 
+  color: #ffff00; 
+  border: 2px solid #ffff00; 
+  border-radius: 15px;
   text-transform: uppercase;
   margin-right: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .slider_section .detail-box .btn-box .btn-1:hover {
-  background-color: #e6e600;
+  background-color: #ffff00;
+  color: #050505;
 }
 
 .slider_section .detail-box .btn-box .btn-2 {

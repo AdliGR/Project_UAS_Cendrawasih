@@ -79,11 +79,10 @@ Route::controller(HomeController::class)->group(function(){
 });
 
 
-
 Route::controller(LoginController::class)->group(function(){
-Route::get('/login', 'loginForm')->name('login');
-Route::post('/login','login');
-Route::post('/logout','logout')->name('logout');
+    Route::get('/login', 'loginForm')->name('login');
+    Route::post('/login','login');
+    Route::post('/logout','logout')->name('logout');
 });
 
 

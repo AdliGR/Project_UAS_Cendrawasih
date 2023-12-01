@@ -11,7 +11,12 @@ class HomeController extends Controller
 {
     public function home(){
         $galleries = Gallery::all();
-        $users = User::all();
+        $users = User::where(function($query) {
+            $query->where('role', 'Kepala sekolah')
+                ->orWhere('role', 'Wakil Kepala sekolah')
+                ->orWhere('role', 'kepala sekolah')
+                ->orWhere('role', 'wakil kepala sekolah');
+        })->get();
 
         foreach ($galleries as $gallery) {
             $foto = Foto::where('acara', $gallery->name_event)->first();

@@ -62,6 +62,23 @@
       .card:hover .card-body {
           opacity: 1;
       }
+
+      .img-fluid {
+          border-radius: 10px;
+      }
+
+      .user-details p {
+          text-align: center;
+      }
+
+      .user-details h5 {
+          text-align: center;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 50px;
+      }
   </style>
 </head>
 
@@ -266,12 +283,10 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          what we offer
+          Fasilitas Kami
         </h2>
         <p>
-          It is a long established fact that a reader will be distracted by
-          the readable content of a page when looking at its layout. The point
-          of using Lorem
+          Yayasan Cendrawasih menyediakan fasilitas yang lenkap untuk membantu memenuhi kebutuhan pembelajaran siswa/siswi di sekolah.
         </p>
       </div>
       <div class="row">
@@ -615,7 +630,7 @@
   <!-- end offer section -->
 
 <!-- about section -->
-<section class="about_section ">
+<!-- <section class="about_section ">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
@@ -668,13 +683,13 @@
         </div>
       </div>
     </div>  
-  </section>
+  </section> -->
   <!-- end about section -->
 
   <!-- gallery section -->
   <section class="Gallery">
     <div class="container-fluid">
-    <h2>Gallery</h2>
+    <h2><strong>Gallery</strong></h2>
         <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @foreach($galleries->chunk(3) as $galleryChunk)
@@ -702,7 +717,7 @@
 
   <section>
   <div class="container">
-        <h2>User List</h2>
+        <h2><strong>Our Staff</strong></h2>
         <div class="row">
             @foreach($users as $user)
                 <div class="col-md-4 mb-4">
@@ -713,14 +728,8 @@
                     <div class="user-details">
                         <h5>{{ $user->name }}</h5>
                         <p>
-                            <strong>Email:</strong> {{ $user->email }}<br>
-                            <strong>Role:</strong> {{ $user->role }}<br>
-                            <strong>Admin:</strong> {{ $user->is_admin ? 'Yes' : 'No' }}<br>
+                            {{ $user->role }}<br>
                         </p>
-                        <div class="user-actions">
-                            <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary">Edit</a>
-                            <button class="btn btn-danger delete-user-button" data-user-id="{{ $user->id }}">Delete</button>
-                        </div>
                     </div>
                 </div>
             @endforeach
@@ -731,84 +740,7 @@
   <!-- end client section -->
 
   <!-- info section -->
-  <section class="info_section layout_padding">
-    <div class="container">
-      <div class="info_form">
-
-        <!-- <div class="row">
-          <div class="offset-lg-3 col-lg-3">
-            <h5 class="form_heading">
-              Newsletter
-            </h5>
-          </div>
-          <div class="col-md-6">
-            <form action="#">
-              <input type="text" placeholder="Enter Your email">
-              <button>
-                subscribe
-              </button>
-            </form>
-          </div>
-        </div> -->
-
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_logo">
-            <div>
-              <a href="">
-                <img src="/brighton-html/images/logo.png" alt="" />
-                <span>
-                  Cendrawasih
-                </span>
-              </a>
-            </div>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_links ">
-            <h5>
-              Contact Us
-            </h5>
-            <p class="pr-0 pr-md-4 pr-lg-5">
-              Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_insta">
-            <h5>
-              INFORMATION
-            </h5>
-            <p class="pr-0 pr-md-4 pr-md-5">
-              Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="pl-0 pl-lg-5 pl-md-4">
-            <h5>
-              MY ACCOUNT
-
-            </h5>
-            <p>
-              Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros
-            </p>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  @include('layouts.footerhome')
 
   <!-- end info_section -->
 

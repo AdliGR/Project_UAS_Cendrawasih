@@ -1,25 +1,4 @@
-<section class="info_section layout_padding">
-    <div class="container">
-      <div class="info_form">
-
-        <!-- <div class="row">
-          <div class="offset-lg-3 col-lg-3">
-            <h5 class="form_heading">
-              Newsletter
-            </h5>
-          </div>
-          <div class="col-md-6">
-            <form action="#">
-              <input type="text" placeholder="Enter Your email">
-              <button>
-                subscribe
-              </button>
-            </form>
-          </div>
-        </div> -->
-
-      </div>
-    </div>
+  <section class="info_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
@@ -32,10 +11,30 @@
                 </span>
               </a>
             </div>
-            <p>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_insta">
+            <h5>
+              ADDRESS
+            </h5>
+            <h6>SEKOLAH KRISTEN CENDRAWASIH</h6>
+            <p class="pr-0 pr-md-4 pr-md-5">
+            Jl. Cendrawasih Raya No.66, RT.11/RW.7, Cengkareng Bar., Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11730
             </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_insta">
+            <h5>
+              Pendidikan
+            </h5>
+            <ul>
+              <li>TK</li>
+              <li>SD</li>
+              <li>SMP</li>
+              <li>SMK</li>
+            </ul>
           </div>
         </div>
         <div class="col-md-3">
@@ -55,30 +54,7 @@
               </div>            
             </div>
             <br>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_insta">
-            <h5>
-              INFORMATION
-            </h5>
-            <p class="pr-0 pr-md-4 pr-md-5">
-              Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="pl-0 pl-lg-5 pl-md-4">
-            <h5>
-              MY ACCOUNT
-
-            </h5>
-            <p>
-              Donec odio. Quisque volutpat mattis eros.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros
-            </p>
-
+            <p>Phone : +62 818-113-297</p>
           </div>
         </div>
       </div>

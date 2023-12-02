@@ -13,7 +13,6 @@
             border: 1px solid rgb(60, 119, 177); 
             margin-bottom: 5px;
             transition: background-color 0.3s ease, border-color 0.3s ease; 
-            border-radius: 50px;
         }
 
         .list-group-item:hover {
@@ -45,7 +44,7 @@
         }
 
         .img-thumbnail:hover {
-            box-shadow: 0 0 10px rgba(30, 50, 0, 0.8); /* Efek bayangan saat hover */
+            box-shadow: 0 0 10px rgba(30, 50, 0, 0.8);
         }
 
         /* CSS untuk styling LightGallery */
@@ -65,12 +64,25 @@
         text-align: center;
         margin-bottom: 20px;
         }
+
+        body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        /* .footer_section {
+        } */
     </style>
 </head>
 <body>
     <header class="header_section">
         <div class="container">
-        @include('layouts.navbar')
+            @include('layouts.navbar')
         </div>
     </header>
     <div class="container mt-5">
@@ -163,14 +175,12 @@
                     });
             }
         
-            // Menampilkan galeri foto dari acara pertama saat halaman dimuat
             const firstAcaraLink = document.querySelector('.list-group-item a');
             if (firstAcaraLink) {
                 const firstAcara = firstAcaraLink.textContent;
                 showGalleryByAcara(firstAcara);
             }
         
-            // Menambahkan event listener untuk setiap link acara
             const acaraLinks = document.querySelectorAll('.list-group-item a');
             acaraLinks.forEach((acaraLink) => {
                 acaraLink.addEventListener('click', (event) => {

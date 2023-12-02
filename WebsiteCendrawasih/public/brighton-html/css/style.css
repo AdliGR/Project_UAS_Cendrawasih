@@ -578,3 +578,94 @@ a:focus {
   color: #fefdfc;
 }
 /*# sourceMappingURL=style.css.map */
+
+.visi-box {
+  text-align: center;
+}
+
+.visi-box h3 {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: 'lemon_milkregular', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.visi-box p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #050505;
+  /* background-color: yellow; */
+  border: 3px solid rgb(136, 136, 30); 
+  padding: 15px; 
+  border-radius: 5px;
+  font-family: 'jonathan_acre', Arial, sans-serif; 
+  box-shadow: 0 0 10px rgba(30, 50, 0, 0.8)
+}
+
+.visi-box p:hover {
+  color: white;
+  background-color: rgb(136, 136, 30);
+}
+
+@font-face {
+  font-family: 'lemon_milkregular';
+  src: url('lemonmilk-regular-webfont.woff2') format('woff2'),
+       url('lemonmilk-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'glober_semibold';
+  src: url('glober_semibold_free-webfont.woff2') format('woff2'),
+       url('glober_semibold_free-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'jonathan_acre';
+  src: url('jonathan_ball_-_acre-medium-webfont.woff2') format('woff2'),
+       url('jonathan_ball_-_acre-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.misi-box {
+  text-align: center;
+}
+
+.misi-heading h3 {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-family: 'lemon_milkregular', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.misi-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  column-count: 2;
+}
+
+.misi-list li {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #050505;
+  /* background-color: yellow;  */
+  border: 3px solid rgb(136, 136, 30);
+  padding: 15px; 
+  margin-bottom: 10px; 
+  border-radius: 5px; 
+  font-family: 'jonathan_acre', Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(30, 50, 0, 0.8)
+}
+
+.misi-list li:hover {
+  color: white;
+  background-color: rgb(136, 136, 30);
+}

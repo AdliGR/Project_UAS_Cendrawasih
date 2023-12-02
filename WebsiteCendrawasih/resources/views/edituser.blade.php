@@ -131,49 +131,37 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}" enctype="multipart/form-data">
+                        <form action="{{ route('users.update', ['user' => $user->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
+                            @method('PUT') <!-- Use the PUT method for updating -->
 
-                            <div class="input-group input-group-outline my-3">
-                                <!-- <label  class="form-label" for="name">Name:</label> -->
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{ $user->name }}" required>
+                            <div class="input-group input-group-outline mb-3">
+                                <!-- <label class="form-label" for="display_name">Nama</label> -->
+                                <input type="text" name="display_name" class="form-control" placeholder="name" value="{{ old('display_name', $user->display_name) }}" required>
                             </div>
 
-                            <div class="input-group input-group-outline my-3">
-                                <!-- <label  class="form-label" for="umur">Age:</label> -->
-                                <input type="number" name="umur" id="umur" class="form-control" placeholder="umur" value="{{ $user->umur }}">
+                            <div class="input-group input-group-outline mb-3">
+                                <!-- <label class="form-label" for="name">Name</label> -->
+                                <input type="text" name="name" class="form-control" placeholder="name(tanpa gelar)" value="{{ old('name', $user->name) }}" required>
                             </div>
-
-                            <div class="input-group input-group-outline my-3">
-                                <!-- <label for="gender">Gender:</label> -->
-                                <select name="gender" id="gender" class="form-control">
-                                    <option value="male" {{ $user->gender == 'male' ? 'selected' : '' }}>Male</option>
-                                    <option value="female" {{ $user->gender == 'female' ? 'selected' : '' }}>Female</option>
+                            <div class="input-group input-group-outline mb-3">
+                                <!-- <label class="form-label" for="role">Role</label> -->
+                                <select name="role" id="role" class="form-control">
+                                    <option value="Kepala Sekolah" {{ old('role', $user->role) == 'Kepala Sekolah' ? 'selected' : '' }}>Kepala Sekolah</option>
+                                    <option value="Wakil Kepala Sekolah" {{ old('role', $user->role) == 'Wakil Kepala Sekolah' ? 'selected' : '' }}>Wakil Kepala Sekolah</option>
+                                    <option value="Guru" {{ old('role', $user->role) == 'Guru' ? 'selected' : '' }}>Guru</option>
                                 </select>
                             </div>
-
-                            <div class="input-group input-group-outline my-3">
-                                <!-- <label  class="form-label" for="tanggal_lahir">Date of Birth:</label> -->
-                                <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="{{ $user->tanggal_lahir }}">
+                            <div class="form-check mb-4">
+                                <label class="form-label" for="is_admin">Admin</label>
+                                <input type="checkbox" class="form-check-input" name="is_admin" id="is_admin" value="1" {{ $user->is_admin ? 'checked' : '' }}>
                             </div>
-
                             <div class="input-group input-group-outline my-3">
-                                <!-- <label  class="form-label" for="role">Role:</label> -->
-                                <input type="text" name="role" id="role" class="form-control" placeholder="role" value="{{ $user->role }}">
-                            </div>
-
-                            <div class="input-group input-group-outline my-3">
-                                <!-- <label for="photo">Photo:</label> -->
+                                <!-- <label class="form-label" for="photo">Photo</label> -->
                                 <input type="file" name="photo" id="photo" class="form-control-file">
                                 @if($user->photo)
                                     <img src="{{ asset($user->photo) }}" alt="User Photo" class="img-fluid mt-2" style="max-width: 100%;">
                                 @endif
-                            </div>
-
-                            <div class="form-check mb-4">
-                                <input type="checkbox" class="form-check-input" name="is_admin" id="is_admin" {{ $user->is_admin ? 'checked' : '' }}>
-                                <label class="form-check-label" for="is_admin">Admin:</label>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Update User</button>

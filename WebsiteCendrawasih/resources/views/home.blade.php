@@ -54,18 +54,6 @@
         margin-bottom: 50px;
       }
 
-      .navbar-nav .nav-item:hover {
-        color: #e6e600; 
-        text-decoration: none;
-        position: relative;
-        transition: color 0.3s ease, border-bottom 0.3s ease;
-      }
-
-      .navbar-nav .nav-item:hover a {
-        color: #e6e600;
-        border-bottom: 2px solid #e6e600;
-      }
-
       .fasilitas-img {
         max-width: 100%; 
         margin-bottom: 20px;
@@ -87,7 +75,7 @@
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
-      @include('layouts.navbar')
+        @include('layouts.navbar')
       </div>
     </header>
     <!-- end header section -->
@@ -129,7 +117,7 @@
           </div>
           <div class="carousel-item">
             <img class="fasilitas-img w-100" src="/fasilitas/perpustakaan 2.jpg" alt="Perpustakaan 2">
-            <h2><strong>Perpustakaan 2</strong></h2>
+            <h2><strong>Perpustakaan</strong></h2>
           </div>
           <div class="carousel-item">
             <img class="fasilitas-img w-100" src="/fasilitas/Ruang Komputer.jpg" alt="Ruang Komputer">
@@ -141,7 +129,7 @@
           </div>
           <div class="carousel-item">
             <img class="fasilitas-img w-100" src="/fasilitas/Lobby.jpg" alt="Lobby">
-            <h2><strong>Lobby</strong></h2>
+            <h2><strong>Lobby Gereja</strong></h2>
           </div>
           <div class="carousel-item">
             <img class="fasilitas-img w-100" src="/fasilitas/Hallway.jpg" alt="Hallway">
@@ -149,7 +137,7 @@
           </div>
           <div class="carousel-item">
             <img class="fasilitas-img w-100" src="/fasilitas/Hallway 2.jpg" alt="Hallway 2">
-            <h2><strong>Hallway 2</strong></h2>
+            <h2><strong>Hallway</strong></h2>
           </div>
           <div class="carousel-item">
             <img class="fasilitas-img w-100" src="/fasilitas/kantin.jpg" alt="Kantin">
@@ -252,7 +240,7 @@
   <!-- end about section -->
 
   <!-- gallery section -->
-  <section class="Gallery">
+  <!-- <section class="Gallery">
     <div class="container-fluid">
     <h2><strong>Gallery</strong></h2>
         <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -266,7 +254,6 @@
                                         <h5 class="card-title">{{ $gallery->name_event }}</h5>
                                         <p class="card-text">{{ Str::limit($gallery->deskripsi, 25) }}</p>
                                         <p class="card-text">Date: {{ $gallery->date }}</p>
-                                        <!-- Add other fields as needed -->
                                     </div>
                                 </div>
                             @endforeach
@@ -276,7 +263,7 @@
             </div>
         </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- end about section -->
 
@@ -291,7 +278,7 @@
                     @endif
 
                     <div class="user-details">
-                        <h5>{{ $user->name }}</h5>
+                        <h5>{{ $user->display_name }}</h5>
                         <p>
                             {{ $user->role }}<br>
                         </p>

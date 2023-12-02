@@ -130,59 +130,43 @@
                                 </ul>
                             </div>
                         @endif
-
-                        <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
+                        <form action="{{ route('users.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
-
-                            <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" required>
+                            <div class="input-group input-group-dynamic mb-3">
+                                <label class="form-label" for="display_name">Nama</label>
+                                <input type="text" name="display_name" class="form-control" value="{{ old('display_name') }}" required>
                             </div>
-
-                            <!-- <div class="input-group input-group-outline my-3">
+                            <div class="input-group input-group-dynamic mb-3">
+                                <label class="form-label" for="name">Name (tanpa gelar)</label>
+                                <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
+                            </div>
+                            <!-- <div class="input-group input-group-dynamic mb-3">
                                 <label class="form-label" for="email">Email</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
-                            </div>
-
-                            <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="password">Password</label>
-                                <input type="password" name="password" id="password" class="form-control" required>
+                                <input type="email" name="email" class="form-control" required>
                             </div> -->
-
-                            <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="umur">Age</label>
-                                <input type="number" name="umur" id="umur" class="form-control" value="{{ old('umur') }}">
+                            <div class="input-group input-group-dynamic mb-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" name="password" class="form-control" value="{{ old('password') }}" required>
                             </div>
-
-                            <div class="input-group input-group-outline my-3">
-                                <!-- <label class="form-label" for="gender">Gender</label> -->
-                                <select name="gender" id="gender" class="form-control">
-                                    <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
-                                    <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
+                            <div class="input-group input-group-dynamic mb-3">
+                                <!-- <label class="form-label" for="role">Role</label> -->
+                                <select name="role" id="role" class="form-control">
+                                    <option value="Kepala Sekolah">Kepala Sekolah</option>
+                                    <option value="Wakil Kepala Sekolah" >Wakil Kepala Sekolah</option>
+                                    <option value="Guru">Guru</option>
                                 </select>
                             </div>
-
-                            <div class="input-group input-group-outline my-3">
-                                <!-- <label class="form-label" for="tanggal_lahir">Date of Birth:</label> -->
-                                <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control" value="{{ old('tanggal_lahir') }}">
-                            </div>
-
-                            <div class="input-group input-group-outline my-3">
-                                <label class="form-label" for="role">Role</label>
-                                <input type="text" name="role" id="role" class="form-control" value="{{ old('role') }}">
-                            </div>
-
-                            <div class="input-group input-group-outline my-3">
-                                <label for="photo">Photo :    </label>
-                                <input type="file" name="photo" id="photo" class="form-control-file">
-                            </div>
-
                             <div class="form-check mb-4">
-                                <input type="checkbox" class="form-check-input" name="is_admin" id="is_admin" {{ old('is_admin') ? 'checked' : '' }}>
-                                <label class="form-check-label" for="is_admin">Admin: </label>
+                                <input type="hidden" name="is_admin" value="0">
+                                <input type="checkbox" class="form-check-input" name="is_admin" id="is_admin" value="1" {{ old('is_admin') ? 'checked' : '' }}>
+                                <label class="form-check-label" for="is_admin">Admin</label>
                             </div>
-
-                            <button type="submit" class="btn btn-primary">Add User</button>
+                            <div class="input-group input-group-dynamic mb-3">
+                                <label class="form-label" for="photo"></label>
+                                <input type="file" name="photo" class="form-control">
+                            </div>
+                            <button type="submit" class="btn bg-gradient-success">Create User</button>
+                            <a href="{{ route('showuserlist') }}" class="btn btn-primary">Kembali</a>
                         </form>
                     </div>
                 </div>

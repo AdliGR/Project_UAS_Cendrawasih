@@ -10,7 +10,7 @@
                   <a href="{{ route('home') }}" class="nav-link text-muted" target="_blank">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('home') }}" class="nav-link text-muted" target="_blank">Galery</a>
+                  <a href="{{ route('gallery') }}" class="nav-link text-muted" target="_blank">Galery</a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ route('home') }}" class="nav-link text-muted" target="_blank">About Us</a>

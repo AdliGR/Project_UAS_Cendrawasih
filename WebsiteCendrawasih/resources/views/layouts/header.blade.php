@@ -24,3 +24,16 @@
   <link href="/brighton-html/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/brighton-html/css/responsive.css" rel="stylesheet" />
+  <style>
+    .navbar-nav .nav-item:hover {
+        color: #e6e600; 
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+      }
+
+      .navbar-nav .nav-item:hover a {
+        color: #e6e600;
+        border-bottom: 2px solid #e6e600;
+      }
+  </style>

@@ -2,152 +2,142 @@
 <html lang="en">
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  @include('layouts.header')
+  <style>
+      .heading_container {
+          text-align: center;
+      }
 
-  <title>Brighton</title>
+      .heading_container h2 {
+          margin-bottom: 20px;
+      }
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+      .about_section {
+          background: url('/brighton-html/images/gedung.jpg') center center/cover no-repeat;
+          position: relative;
+          padding: 50px 0;
+          opacity: 0.7;
+      }
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+      .card {
+          background-color: rgba(255, 255, 255, 0.8); 
+          border-radius: 15px; 
+          padding: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+  </style>
 </head>
 
-<body class="sub_page">
-  <div class="hero_area">
+<body>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="" />
-            <span>
-              Brighton
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.html">
-                    Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="about.html"> About </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="program.html"> Programs </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html"> Contact us</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        @include('layouts.navbar')
       </div>
     </header>
     <!-- end header section -->
 
-  </div>
 
-
-  <!-- about section -->
-  <section class="about_section ">
+<!-- about section -->
+<!-- <section class="about_section">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="img-box">
-            <img src="images/gedung.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-5 col-lg-4">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                VISI DAN MISI SMK KRISTEN CENDRAWASIH
-              </h2>
+        <div class="row">
+            <div class="col-md-4">
             </div>
-            <br />
-            <div class="about_section">
-              <div class="visi-box">
-                  <h3>VISI</h3>
-                  <p>
-                      “Menciptakan lulusan yang Jujur, Unggul, Kreatif, Peduli Lingkungan dan Siap Kerja (JUTEKS PLUS) dan
-                      berkualitas, terampil dalam berkarya dan berakhlak mulia di era globalisasi”
-                  </p>
-              </div>
-              <div class="misi-box">
-                <div class="misi-heading">
-                    <h3>MISI</h3>
-                </div>
-                <div class="misi-list">
-                    <ul>
-                        <li>Meningkatkan kualitas manajemen Pendidikan dan layanan Pendidikan</li>
-                        <li>Meningkatkan sumber daya manusia</li>
-                        <li>Meningkatkan kualitas Sarana dan Prasarana</li>
-                        <li>Meningkatkan Kualitas dan Kuantitas Tenaga Pendidik dan Kependidikan</li>
-                        <li>Meningkatkan kerjasama dengan instansi DUDIKA yang bergerak di bidang Teknologi melalui PKL (Praktek Kerja
-                            Lapangan) dan rekrutmen</li>
-                        <li>Meningkatkan kerjasama dengan orang tua peserta didik, DUDIKA, dan alumni.</li>
-                        <li>Mewujudkan Profil Pelajar Pancasila</li>
-                        <li>Mewujudkan sekolah sebagai pusat keunggulan</li>
-                        <li>Mengembangkan kurikulum sesuai dengan kebutuhan DUDIKA</li>
-                        <li>Melaksanakan kegiatan pembelajaran berbasis pada minat dan kebutuhan peserta didik dan DUDIKA yang
-                            didukung oleh Teknologi Informasi dan Komunikasi</li>
-                        <li>Mengoptimalkan pembinaan dan pembimbingan kegiatan akademik dan non-akademik</li>
-                        <li>Mewujudkan lingkungan yang sehat, bersih, dan nyaman</li>
-                    </ul>
+            <div class="col-md-5 col-lg-4">
+                <div class="detail-box">
+                    <div class="heading_container">
+                        <h2>
+                            VISI DAN MISI SMK KRISTEN CENDRAWASIH
+                        </h2>
+                    </div>
+                    <div class="visi-box">
+                        <h3>VISI</h3>
+                        <p>
+                            “Menciptakan lulusan yang Jujur, Unggul, Kreatif, Peduli Lingkungan dan Siap Kerja (JUTEKS PLUS) dan
+                            berkualitas, terampil dalam berkarya dan berakhlak mulia di era globalisasi”
+                        </p>
+                    </div>
+                    <div class="misi-box">
+                        <div class="misi-heading">
+                            <h3>MISI</h3>
+                        </div>
+                        <div class="misi-list">
+                            <ul>
+                                <li>Meningkatkan kualitas manajemen Pendidikan dan layanan Pendidikan</li>
+                                <li>Meningkatkan sumber daya manusia</li>
+                                <li>Meningkatkan kualitas sarana dan Prasarana</li>
+                                <li>Meningkatkan kualitas dan Kuantitas Tenaga Pendidik dan Kependidikan</li>
+                                <li>Meningkatkan kerjasama dengan instansi DUDIKA yang bergerak di bidang Teknologi melalui PKL (Praktek
+                                    Kerja Lapangan) dan rekrutmen</li>
+                                <li>Meningkatkan kerjasama dengan orang tua peserta didik, DUDIKA, dan alumni</li>
+                                <li>Mewujudkan Profil Pelajar Pancasila</li>
+                                <li>Mewujudkan sekolah sebagai pusat keunggulan</li>
+                                <li>Mengembangkan kurikulum sesuai dengan kebutuhan DUDIKA</li>
+                                <li>Melaksanakan kegiatan pembelajaran berbasis pada minat dan kebutuhan peserta didik dan DUDIKA yang
+                                    didukung oleh Teknologi Informasi dan Komunikasi</li>
+                                <li>Mengoptimalkan pembinaan dan pembimbingan kegiatan akademik dan non akademik</li>
+                                <li>Mewujudkan lingkungan yang sehat, bersih, dan nyaman</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-                        
-          </div>
-          </div>
         </div>
-      </div>
     </div>
+</section> -->
 
+<section class="about_section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-5 col-lg-4">
+                <div class="card">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                VISI DAN MISI SMK KRISTEN CENDRAWASIH
+                            </h2>
+                        </div>
+                        <div class="visi-box">
+                            <h3>VISI</h3>
+                            <p>
+                                “Menciptakan lulusan yang Jujur, Unggul, Kreatif, Peduli Lingkungan dan Siap Kerja (JUTEKS PLUS) dan
+                                berkualitas, terampil dalam berkarya dan berakhlak mulia di era globalisasi”
+                            </p>
+                        </div>
+                        <div class="misi-box">
+                            <div class="misi-heading">
+                                <h3>MISI</h3>
+                            </div>
+                            <div class="misi-list">
+                                <ul>
+                                  <li>Meningkatkan kualitas manajemen Pendidikan dan layanan Pendidikan</li>
+                                  <li>Meningkatkan sumber daya manusia</li>
+                                  <li>Meningkatkan kualitas sarana dan Prasarana</li>
+                                  <li>Meningkatkan kualitas dan Kuantitas Tenaga Pendidik dan Kependidikan</li>
+                                  <li>Meningkatkan kerjasama dengan instansi DUDIKA yang bergerak di bidang Teknologi melalui PKL (Praktek
+                                      Kerja Lapangan) dan rekrutmen</li>
+                                  <li>Meningkatkan kerjasama dengan orang tua peserta didik, DUDIKA, dan alumni</li>
+                                  <li>Mewujudkan Profil Pelajar Pancasila</li>
+                                  <li>Mewujudkan sekolah sebagai pusat keunggulan</li>
+                                  <li>Mengembangkan kurikulum sesuai dengan kebutuhan DUDIKA</li>
+                                  <li>Melaksanakan kegiatan pembelajaran berbasis pada minat dan kebutuhan peserta didik dan DUDIKA yang
+                                      didukung oleh Teknologi Informasi dan Komunikasi</li>
+                                  <li>Mengoptimalkan pembinaan dan pembimbingan kegiatan akademik dan non akademik</li>
+                                  <li>Mewujudkan lingkungan yang sehat, bersih, dan nyaman</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end about section -->
 
-  </section>
-
-  <!-- end about section -->
-
-
-
-
-  <!-- info section -->
-  @include('layouts.footerhome')
-
-  <!-- end info_section -->
-
-  <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      &copy; 2019 All Rights Reserved By
-      <a href="https://html.design/">Free Html Templates</a>
-    </p>
-  </section>
-  <!-- footer section -->
+@include('layouts.footerhome')
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>

@@ -9,5 +9,11 @@
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.8.0",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "lg-fullscreen": "^1.2.1",
+        "lg-thumbnail": "^1.2.1",
+        "lg-zoom": "^1.3.0",
+        "lightgallery": "^2.7.2"
     }
 }

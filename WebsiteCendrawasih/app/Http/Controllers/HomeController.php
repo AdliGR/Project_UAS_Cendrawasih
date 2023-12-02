@@ -37,4 +37,19 @@ class HomeController extends Controller
     public function aboutus(){
         return view('about');
     }
+
+    public function gallery()
+    {
+        $acaraList = Foto::distinct()->pluck('acara');
+        $firstAcara = $acaraList->first();
+
+        return view('gallery', compact('acaraList', 'firstAcara'));
+    }
+
+    public function show($acara)
+    {
+        $photos = Foto::where('acara', $acara)->get();
+
+        return response()->json(['photos' => $photos]);
+    }
 }

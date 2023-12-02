@@ -18,7 +18,7 @@
           <a class="nav-link" href="{{ route('aboutus') }} "> About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="program.html"> Gallery </a>
+          <a class="nav-link" href="{{ route('gallery') }}"> Gallery </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.html"> Teacher </a>

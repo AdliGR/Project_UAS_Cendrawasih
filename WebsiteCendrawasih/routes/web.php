@@ -30,6 +30,17 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/AdminDashboard', [DashboardController::class, 'Admindashboard'])->name('Admindashboard');
 
+//fasilitas
+Route::controller(FasilitasController::class)->group(function(){
+    Route::get('/listfasilitas', 'index')->name('index.fasilitas');
+    Route::get('/fasilitascreate', 'create')->name('fasilitas.create');
+    Route::post('/fasilitas/store', 'store')->name('fasilitas.store');
+    Route::delete('/fasilitas/{id}', 'destroy')->name('fasilitas.destroy');
+    Route::get('/fasilitasedit/{id}', 'editForm')->name('fasilitas.edit');
+    Route::put('/fasilitasedit/{id}', 'update')->name('fasilitas.update');
+    Route::get('/download-excel', 'downloadExcel')->name('faslitas.excelDL');
+});
+
 //tambah user
 Route::controller(UserController::class)->group(function(){
     Route::get('/listusers',  'showuserlist')->name('showuserlist');
@@ -53,17 +64,6 @@ Route::post('/tambah-foto', [FotoController::class, 'store'])->name('foto.store'
 Route::get('/listfoto', [FotoController::class, 'listfoto'])->name('listfoto');
 Route::delete('/deletePhoto', [FotoController::class, 'deletePhoto'])->name('deletePhoto');
 
-//fasilitas
-Route::controller(FasilitasController::class)->group(function(){
-    Route::get('/fasilitas', 'index')->name('index.fasilitas');
-    Route::get('/fasilitascreate', 'create')->name('fasilitas.create');
-    Route::post('/fasilitas', 'store')->name('fasilitas.store');
-    Route::delete('/fasilitas/{id}', 'destroy')->name('fasilitas.destroy');
-    Route::get('/fasilitasedit/{id}', 'editForm')->name('fasilitas.edit');
-    Route::put('/fasilitasedit/{id}', 'update')->name('fasilitas.update');
-    Route::get('/download-excel', 'downloadExcel')->name('faslitas.excelDL');
-});
-
 Route::controller(AcaraController::class)->group(function(){
     Route::get('/events', 'index')->name('index.acara');
     Route::get('/events/create', 'create')->name('events.created');
@@ -76,6 +76,8 @@ Route::controller(AcaraController::class)->group(function(){
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'home')->name('home');
     Route::get('/AboutUs', 'aboutus')->name('aboutus');
+    Route::get('/gallery',  'gallery')->name('gallery');
+    Route::get('/gallery/{acara}', 'show')->name('show');
 });
 
 

@@ -2,33 +2,7 @@
 <html lang="en">
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <link rel="icon" type="image/png" href="/material-dashboard-master/assets/img/favicon.png">
-
-  <title>Sekolah Kristen Cendrawasih</title>
-
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="/brighton-html/css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="/brighton-html/css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="/brighton-html/css/responsive.css" rel="stylesheet" />
+  @include('layouts.header')
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -346,45 +320,6 @@
 
   <script type="text/javascript" src="/brighton-html/js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="/brighton-html/js/bootstrap.js"></script>
-
-  <script>
-    // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-    // Australia.
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 11,
-        center: {
-          lat: 40.645037,
-          lng: -73.880224
-        }
-      });
-
-      var image = "/brighton-html/images/maps-and-flags.png";
-      var beachMarker = new google.maps.Marker({
-        position: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-        map: map,
-        icon: image
-      });
-    }
-  </script>
-  <!-- google map js -->
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
-  </script>
-  <!-- end google map js -->
-
-  <script>
-    function openNav() {
-      document.getElementById("myNav").style.width = "100%";
-    }
-
-    function closeNav() {
-      document.getElementById("myNav").style.width = "0%";
-    }
-  </script>
   <script>
     const imageList = ['Panggung Gereja.jpg', 'Perpustakaan.jpg', 'perpustakaan 2.jpg', 'Ruang Komputer.jpg', 'Ruang Kelas.jpg', 'Lobby.jpg', 'Hallway.jpg', 'Hallway 2.jpg', 'kantin.jpg', 'Lobby.jpg', 'Parkiran.jpg', 'Ruang Kepsek.jpg'];
 

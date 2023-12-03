@@ -75,6 +75,10 @@
             flex: 1;
         }
 
+        .row{
+            margin-top: 100px;
+        }
+
         /* .footer_section { 
         } */
     </style>
@@ -86,7 +90,7 @@
         </div>
     </header>
     <div class="container mt-5">
-        <h2>Gallery</h2>
+        <h2><strong>Gallery</strong></h2>
         <div class="row">
             <div class="col-md-4">
                 <h2>List Acara</h2>
@@ -99,7 +103,7 @@
                 </ul>
             </div>
             <div class="col-md-8">
-                <h2>Foto</h2>
+                <!-- <h2>Foto</h2> -->
                 <div id="photo-list" class="row">
                     <!-- Gallery photos will be loaded here using JavaScript -->
                 </div>

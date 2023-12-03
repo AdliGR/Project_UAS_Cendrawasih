@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/material-dashboard-master/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/material-dashboard-master/assets/img/favicon.png">
   <title>
-    User List
+    List Guru
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -136,7 +136,7 @@
     <!-- End Navbar -->
     <!-- content -->
     <div class="container">
-        <h2>User List</h2>
+        <h2>List Guru</h2>
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
@@ -155,9 +155,9 @@
             @foreach($users as $user)
                 <div data-aos="fade-up" class="col-md-4 mb-4 user-card" data-name="{{ $user->name }}" data-email="{{ $user->email }}" data-role="{{ $user->role }}">
                     <div class="card">
-                        @if($user->photo)
+                        <!-- @if($user->photo)
                             <img src="{{ asset($user->photo) }}" class="card-img-top" alt="User Photo">
-                        @endif
+                        @endif -->
 
                         <div class="card-body">
                             <h5 class="card-title">{{ $user->name }}</h5>

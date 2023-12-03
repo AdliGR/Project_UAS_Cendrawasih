@@ -55,6 +55,7 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/AboutUs', 'aboutus')->name('aboutus');
     Route::get('/gallery',  'gallery')->name('gallery');
     Route::get('/gallery/{acara}', 'show')->name('show');
+    Route::get('/penjurusan(SMK)',  'penjurusan')->name('penjurusan');
 });
 
 

@@ -3,80 +3,54 @@
 <head>
     @include('layouts.header')
     <style>
-        .list-group {
+        body {
+            /* background-color: rgb(60, 119, 177);
+            color: #ffff00; */
+        }
+
+        .jumbotron {
+            background-color: rgb(60, 119, 177);
+            color: rgb(60, 119, 177);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
             margin-bottom: 20px;
-            
+            border: 3px solid rgb(60, 119, 177);
         }
 
-        .list-group-item {
-            cursor: pointer;
-            border: 1px solid rgb(60, 119, 177); 
-            margin-bottom: 5px;
-            transition: background-color 0.3s ease, border-color 0.3s ease; 
-        }
-
-        .list-group-item:hover {
-            background-color: rgb(60, 119, 177); 
-            border-color: rgb(60, 119, 177);
-        }
-
-        .list-group-item a {
-            display: block;
-            padding: 10px 15px;
-            color: #343a40;
-            text-decoration: none;
-        }
-
-        .list-group-item a:hover{
+        h1 {
             color: white;
         }
 
-        #photo-list {
-            margin-top: 20px;
-        }
-
-        .img-thumbnail {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .img-thumbnail:hover {
+        .info_pengenalan_akuntan,
+        .info_pengenalan_otomasi,
+        .info_prospek_akuntan,
+        .info_prospek_otomasi {
+            /* background-color: ; */
+            color: white;
+            padding: 15px;
+            margin-bottom: 15px;
             box-shadow: 0 0 10px rgba(30, 50, 0, 0.8);
         }
 
-        /* CSS untuk styling LightGallery */
-        .lg-toolbar {
-            background-color: rgba(255, 255, 255, 0.8) !important;
+        ul {
+            list-style-type: none;
         }
 
-        .lg-toolbar .lg-close {
-            color: #000 !important;
+        .list-group-item {
+            background-color: rgb(60, 119, 177);
+            color: white;
+            margin-bottom: 5px;
         }
 
-        .lg-sub-html {
-            color: #000 !important;
+        .prospek-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        }
-
-        body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        }
-
-        .container {
-            flex: 1;
-        }
-
-        /* .footer_section { 
-        } */
     </style>
 </head>
 <body>
@@ -85,28 +59,55 @@
             @include('layouts.navbar')
         </div>
     </header>
+    <section>
     <div class="container mt-5">
-        <h2>Gallery</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <h2>List Acara</h2>
-                <ul class="list-group">
-                    @foreach ($acaraList as $acaraItem)
-                        <li class="list-group-item">
-                            <a href="{{ url('/gallery/'.$acaraItem) }}">{{ $acaraItem }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="col-md-8">
-                <h2>Foto</h2>
-                <div id="photo-list" class="row">
-                    <!-- Gallery photos will be loaded here using JavaScript -->
-                </div>
-            </div>
+    <div class="jumbotron">
+        <h1 class="display-4">JURUSAN AKUNTANSI</h1>
+
+        <div class="info_pengenalan_akuntan">
+            <h3>Pengenalan:</h3>
+            <p>Jurusan Akuntansi adalah tempat di mana siswa diberikan pengetahuan dan keterampilan praktis yang
+                diperlukan untuk memahami dan mengelola keuangan suatu entitas. Program ini dirancang untuk
+                membekali siswa dengan pemahaman mendalam tentang prinsip akuntansi, perpajakan, audit, dan
+                sistem informasi keuangan.</p>
+        </div>
+
+        <div class="info_prospek_akuntan">
+            <h3>Prospek Kerja:</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Asisten Administratif:</strong> Mendukung kegiatan administratif sehari-hari, seperti
+                    penyusunan jadwal, penanganan telepon, dan manajemen berkas.
+                    <img src="/penjurusan/akuntansi.jpg" alt="Asisten Administratif Image" class="img-fluid prospek-image">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4">JURUSAN OTOMOTISASI PERKANTORAN</h1>
+
+        <div class="info_pengenalan_otomasi">
+            <h3>Pengenalan:</h3>
+            <p>Jurusan ini memberikan siswa pengetahuan dan keterampilan yang diperlukan untuk menjadi profesional
+                administratif yang terampil dan efisien. Program ini dirancang untuk mengajarkan siswa tentang
+                penggunaan teknologi perkantoran, manajemen waktu, komunikasi bisnis, dan keahlian administratif
+                lainnya</p>
+        </div>
+
+        <div class="info_prospek_otomasi">
+            <h3>Prospek Kerja:</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Asisten Administratif:</strong> Mendukung kegiatan administratif sehari-hari, seperti
+                    penyusunan jadwal, penanganan telepon, dan manajemen berkas.
+                    <img src="/penjurusan/otomisasi perkantoran.jpg" alt="Asisten Administratif Image" class="img-fluid prospek-image">
+                </li>
+            </ul>
         </div>
     </div>
 
+</div>
+    </section>
 
     @include('layouts.footerhome')
 
@@ -117,79 +118,15 @@
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/dist/js/plugins/lg-thumbnail.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/dist/js/plugins/lg-fullscreen.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.2.1/dist/js/plugins/lg-zoom.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const photoList = document.getElementById('photo-list');
-        lightGallery(photoList, {
-            selector: '.lg-item',
-            plugins: [lgThumbnail, lgFullscreen, lgZoom],
-        });
-    });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const photoList = document.getElementById('photo-list');
-            let lg;
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-rCzABXV/cL8nGf3gI0KNBRsAJ9fHVauQY2SYxgStQFZgmi1Bw21tQK7LEQDFMl"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyFvRT5f6PyIepR6FfowrD3NuJiSaa+q2Q"
+        crossorigin="anonymous"></script>
 
-            function showGalleryByAcara(acara) {
-                fetch(`/gallery/${acara}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const photos = data.photos;
-                        photoList.innerHTML = '';
-                    
-                        photos.forEach(photo => {
-                            const colDiv = document.createElement('div');
-                            colDiv.classList.add('col-md-4', 'mb-4');
-                        
-                            const imgLink = document.createElement('a');
-                            imgLink.href = photo.file_path_foto;
-                            imgLink.classList.add('lg-item');
-                        
-                            const img = document.createElement('img');
-                            img.src = photo.file_path_foto_comp;
-                            img.alt = photo.nama_file;
-                            img.classList.add('img-thumbnail', 'w-100');
-                        
-                            imgLink.appendChild(img);
-                            colDiv.appendChild(imgLink);
-                            photoList.appendChild(colDiv);
-                        });
-                    
-                        if (lg) {
-                            lg.destroy();
-                        }
-                    
-                        lg = lightGallery(photoList, {
-                            selector: '.lg-item',
-                            plugins: [lgFullscreen, lgZoom],
-                        });
-                    
-                        lg.on('onAfterOpen.lg', () => {
-                            document.addEventListener('keydown', function (e) {
-                                if (e.key === 'Escape') {
-                                    lg.closeGallery();
-                                }
-                            });
-                        });
-                    });
-            }
-        
-            const firstAcaraLink = document.querySelector('.list-group-item a');
-            if (firstAcaraLink) {
-                const firstAcara = firstAcaraLink.textContent;
-                showGalleryByAcara(firstAcara);
-            }
-        
-            const acaraLinks = document.querySelectorAll('.list-group-item a');
-            acaraLinks.forEach((acaraLink) => {
-                acaraLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    const acara = event.target.textContent;
-                    showGalleryByAcara(acara);
-                });
-            });
-        });
-    </script>
 </body>
 </html>

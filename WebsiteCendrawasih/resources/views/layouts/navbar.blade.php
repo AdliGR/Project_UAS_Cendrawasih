@@ -21,7 +21,7 @@
           <a class="nav-link" href="{{ route('gallery') }}"> Gallery </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html"> Penjurusan </a>
+          <a class="nav-link" href="{{ route('penjurusan') }}"> Penjurusan </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('login') }}">Login</a>

@@ -24,6 +24,11 @@
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <style>
+    .foto{
+      width:30%;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -169,7 +174,7 @@
                                 <!-- <label class="form-label" for="photo">Photo</label> -->
                                 <input type="file" name="photo" id="photo" class="form-control-file">
                                 @if($user->photo)
-                                    <img src="{{ asset($user->photo) }}" alt="User Photo" class="img-fluid mt-2" style="max-width: 100%;">
+                                    <img class="foto" src="{{ asset($user->photo) }}" alt="User Photo" class="img-fluid mt-2" style="max-width: 100%;">
                                 @endif
                             </div>
 

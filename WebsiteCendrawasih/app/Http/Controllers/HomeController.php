@@ -52,4 +52,9 @@ class HomeController extends Controller
 
         return response()->json(['photos' => $photos]);
     }
+
+    public function penjurusan()
+    {
+        return view('penjurusan');
+    }
 }

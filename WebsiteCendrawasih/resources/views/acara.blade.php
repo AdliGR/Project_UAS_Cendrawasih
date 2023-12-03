@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/material-dashboard-master/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/material-dashboard-master/assets/img/favicon.png">
   <title>
-    Up Coming Event
+    Upcoming Event
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -75,7 +75,16 @@
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <!-- <i class="material-icons opacity-10">dashboard</i> -->
             </div>
-            <span class="nav-link-text ms-1">Up Comming Event</span>
+            <span class="nav-link-text ms-1">Upcoming Event</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{{ route('logout') }}">
+            @csrf
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+            </div>
+            <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
       </ul>

@@ -25,7 +25,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         $user = User::where('email', $credentials['email'])->first();
 
-        if ($user && $user->is_admin && Auth::attempt($credentials)) 
+        if ($user && Auth::attempt($credentials)) 
         {
             // jika sukses masuk ke admindashboard
             return redirect()->intended('/AdminDashboard');

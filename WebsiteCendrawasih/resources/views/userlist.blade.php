@@ -147,13 +147,13 @@
             <a href="{{ route('users.create') }}" class="btn btn-info">Tambah User</a>
         </div>
 
-        <div class=" input-group input-group-dynamic mb-4">
-            <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
+        <div class="input-group input-group-dynamic mb-4">
+            <input type="text" id="user-search" class="form-control" placeholder="Search users">
         </div>
 
-        <div class="row">
+        <div class="row" id="user-list">
             @foreach($users as $user)
-                <div class="col-md-4 mb-4">
+                <div data-aos="fade-up" class="col-md-4 mb-4 user-card" data-name="{{ $user->name }}" data-email="{{ $user->email }}" data-role="{{ $user->role }}">
                     <div class="card">
                         @if($user->photo)
                             <img src="{{ asset($user->photo) }}" class="card-img-top" alt="User Photo">
@@ -204,6 +204,28 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          $("#user-search").on("input", function() {
+              var query = $(this).val().toLowerCase();
+          
+              $(".user-card").each(function() {
+                  var name = $(this).data("name").toLowerCase();
+                  var email = $(this).data("email").toLowerCase();
+                  var role = $(this).data("role").toLowerCase();
+              
+                  if (name.includes(query) || email.includes(query) || role.includes(query)) {
+                      $(this).show();
+                  } else {
+                      $(this).hide();
+                  }
+              });
+          });
+      });
+  </script>
+
   <script>
       setTimeout(function() {
           var alert = document.querySelector('.alert-success');
@@ -218,29 +240,6 @@
           offset: 200, 
           easing: 'ease-in-out', 
           once: true
-      });
-  </script>
-  <script>
-      document.getElementById('searchInput').addEventListener('input', function () {
-          var searchText = this.value.toLowerCase();
-          var table = document.getElementById('usersTable');
-          var rows = table.getElementsByTagName('tr');
-
-          for (var i = 1; i < rows.length; i++) {
-              var row = rows[i];
-              var cells = row.getElementsByTagName('td');
-              var shouldHide = true;
-
-              for (var j = 1; j < cells.length - 1; j++) {
-                  var cellText = cells[j].innerText.toLowerCase();
-                  if (cellText.indexOf(searchText) > -1) {
-                      shouldHide = false;
-                      break;
-                  }
-              }
-
-              row.style.display = shouldHide ? 'none' : 'table-row';
-          }
       });
   </script>
   <script>

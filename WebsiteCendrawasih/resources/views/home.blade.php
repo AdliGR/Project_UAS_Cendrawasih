@@ -63,10 +63,29 @@
         min-height: 700px; 
       }
 
+      .offer_section {
+        margin-top: 150px;
+        background-color: rgb(136, 136, 30);
+        background: url('/fasilitas/fasilitas_background.jpg') center center/cover no-repeat;
+      }
+
       .carousel-item {
         min-height: 800px;
       }
+
+      .our_staff .container {
+          margin-top: 20px;
+      }
       
+      .our_staff{
+        padding-top: 1px;
+        background-color: rgb(60, 119, 177);
+      }
+
+      .our_staff h4{
+        margin-top: 10px;
+        text-align: center;
+      }
   </style>
 </head>
 
@@ -107,7 +126,7 @@
 
   <section class="offer_section hero_next_section-margin layout_padding">
     <div class="container mt-5">
-      <h2>Fasilitas</h2>
+      <h2><strong>Fasilitas</strong></h2>
       <p class="text-center">Sekolah Cendrawasih memiliki fasilitas yang cukup untuk membantu proses pembelajaran para siswa di sekolah</p>
       <div id="imageCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -267,25 +286,24 @@
 
   <!-- end about section -->
 
-  <section>
-  <div class="container">
-        <h2><strong>Our Staff</strong></h2>
-        <div class="row">
-            @foreach($users as $user)
-                <div class="col-md-4 mb-4">
-                    @if($user->photo)
-                        <img src="{{ asset($user->photo) }}" class="img-fluid" alt="User Photo">
-                    @endif
-
-                    <div class="user-details">
-                        <h5>{{ $user->display_name }}</h5>
-                        <p>
-                            {{ $user->role }}<br>
-                        </p>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+  <section class="our_staff">
+    <div class="container">
+      <h2><strong>Our Staff</strong></h2>
+      <div class="row">
+          @foreach($users as $user)
+              <div class="col-md-4 mb-4">
+                  @if($user->photo)
+                      <img src="{{ asset($user->photo) }}" class="img-fluid" alt="User Photo">
+                  @endif
+                  <div class="user-details">
+                      <h4><strong>{{ $user->display_name }}</strong></h4>
+                      <p>
+                          <Strong>{{ $user->role }}</Strong><br>
+                      </p>
+                  </div>
+              </div>
+          @endforeach
+      </div>
     </div>
   </section>
 

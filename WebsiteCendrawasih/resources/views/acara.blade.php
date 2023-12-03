@@ -126,7 +126,7 @@
         <h2>Upcoming Events</h2>
 
         <div class="mb-3">
-            <a href="{{ route('events.created') }}" class="btn btn-info">Tambah User</a>
+            <a href="{{ route('events.created') }}" class="btn btn-info">Tambah Acara</a>
         </div>
 
         @if (session('status'))

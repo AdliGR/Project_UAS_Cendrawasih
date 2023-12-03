@@ -66,7 +66,7 @@ class UserController extends Controller
             'display_name' => 'required',
             'name' => 'required',
             'password' => 'required|min:3',
-            'is_admin' => 'nullable|boolean',
+            'is_admin' => 'required|boolean',
             'role' => 'nullable|string',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);

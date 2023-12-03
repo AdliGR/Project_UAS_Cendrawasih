@@ -16,17 +16,6 @@
         <div class="col-md-3">
           <div class="info_insta">
             <h5>
-              ADDRESS
-            </h5>
-            <h6>SEKOLAH KRISTEN CENDRAWASIH</h6>
-            <p class="pr-0 pr-md-4 pr-md-5">
-            Jl. Cendrawasih Raya No.66, RT.11/RW.7, Cengkareng Bar., Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11730
-            </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_insta">
-            <h5>
               Pendidikan
             </h5>
             <ul>
@@ -35,6 +24,17 @@
               <li>SMP</li>
               <li>SMK</li>
             </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_insta">
+            <h5>
+              ADDRESS
+            </h5>
+            <h6>SEKOLAH KRISTEN CENDRAWASIH</h6>
+            <p class="pr-0 pr-md-4 pr-md-5">
+            Jl. Cendrawasih Raya No.66, RT.11/RW.7, Cengkareng Bar., Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11730
+            </p>
           </div>
         </div>
         <div class="col-md-3">

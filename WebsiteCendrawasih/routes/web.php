@@ -70,38 +70,38 @@ Route::middleware(['web','admin'])->group(function ()
 {
     //crud fasilitias
     Route::controller(FasilitasController::class)->group(function(){
-        Route::get('/fasilitascreate', 'create')->name('fasilitas.create');
-        Route::post('/fasilitas/store', 'store')->name('fasilitas.store');
-        Route::delete('/fasilitas/{id}', 'destroy')->name('fasilitas.destroy');
-        Route::get('/fasilitasedit/{id}', 'editForm')->name('fasilitas.edit');
-        Route::put('/fasilitasedit/{id}', 'update')->name('fasilitas.update');
-        Route::get('/download-excel', 'downloadExcel')->name('faslitas.excelDL');
+        Route::get('/AdminDashboard/fasilitascreate', 'create')->name('fasilitas.create');
+        Route::post('/AdminDashboard/fasilitas/store', 'store')->name('fasilitas.store');
+        Route::delete('/AdminDashboard/fasilitas/{id}', 'destroy')->name('fasilitas.destroy');
+        Route::get('/AdminDashboard/fasilitasedit/{id}', 'editForm')->name('fasilitas.edit');
+        Route::put('/AdminDashboard/fasilitasedit/{id}', 'update')->name('fasilitas.update');
+        Route::get('/AdminDashboard/download-excel', 'downloadExcel')->name('faslitas.excelDL');
     });
     
     //crud user
     Route::controller(UserController::class)->group(function(){
-        Route::get('/user/create',  'create')->name('users.create');
-        Route::post('/user/store',  'store')->name('users.store');
-        Route::get('/users/{user}/edit', 'edit')->name('users.edit');
-        Route::put('/users/{user}', 'update')->name('users.update');
-        Route::delete('/users/{user}', 'destroy')->name('users.destroy');
+        Route::get('/AdminDashboard/user/create',  'create')->name('users.create');
+        Route::post('/AdminDashboard/user/store',  'store')->name('users.store');
+        Route::get('/AdminDashboard/users/{user}/edit', 'edit')->name('users.edit');
+        Route::put('/AdminDashboard/users/{user}', 'update')->name('users.update');
+        Route::delete('/AdminDashboard/users/{user}', 'destroy')->name('users.destroy');
     });
 
     //crud event
     Route::controller(AcaraController::class)->group(function(){
-        Route::get('/events/create', 'create')->name('events.created');
-        Route::post('/events', 'store')->name('events.stored');
-        Route::get('/events/{id}/edit', 'editacara')->name('editacara');
-        Route::put('/events/{id}', 'updateacara')->name('updateacara');
-        Route::delete('/events/{id}', 'destroy')->name('events.destroy');
+        Route::get('/AdminDashboard/events/create', 'create')->name('events.created');
+        Route::post('/AdminDashboard/events', 'store')->name('events.stored');
+        Route::get('/AdminDashboard/events/{id}/edit', 'editacara')->name('editacara');
+        Route::put('/AdminDashboard/events/{id}', 'updateacara')->name('updateacara');
+        Route::delete('/AdminDashboard/events/{id}', 'destroy')->name('events.destroy');
     });
 
     //crud gallery
-    Route::get('/tambah-event', [EventController::class, 'createevent'])->name('createevent');
-    Route::post('/tambah-event', [EventController::class, 'store'])->name('events.store');
-    Route::get('/tambah-foto', [FotoController::class, 'addfoto'])->name('addfoto');
-    Route::post('/tambah-foto', [FotoController::class, 'store'])->name('foto.store');
-    Route::delete('/gallery/{id}', [TambahGaleryController::class, 'delete'])->name('gallery.delete');
-    Route::delete('/deletePhoto', [FotoController::class, 'deletePhoto'])->name('deletePhoto');
+    Route::get('/AdminDashboard/tambah-event', [EventController::class, 'createevent'])->name('createevent');
+    Route::post('/AdminDashboard/tambah-event', [EventController::class, 'store'])->name('events.store');
+    Route::get('/AdminDashboard/tambah-foto', [FotoController::class, 'addfoto'])->name('addfoto');
+    Route::post('/AdminDashboard/tambah-foto', [FotoController::class, 'store'])->name('foto.store');
+    Route::delete('/AdminDashboard/gallery/{id}', [TambahGaleryController::class, 'delete'])->name('gallery.delete');
+    Route::delete('/AdminDashboard/deletePhoto', [FotoController::class, 'deletePhoto'])->name('deletePhoto');
 
 });

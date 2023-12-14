@@ -143,8 +143,11 @@
         @if (session('status'))
             <div class="alert alert-success">{{ session('status') }}</div>
         @endif
+
+        @include('layouts.errorModal')
+
         <div class="mb-3">
-            <a href="{{ route('users.create') }}" class="btn btn-info">Tambah User</a>
+            <a href="{{ route('users.create') }}" class="btn btn-info" onclick="checkAdmin()">Tambah User</a>
         </div>
 
         <div class="input-group input-group-dynamic mb-4">
@@ -166,7 +169,7 @@
                                 <strong>Role:</strong> {{ $user->role }}<br>
                                 <strong>Admin:</strong> {{ $user->is_admin ? 'Yes' : 'No' }}<br>
                             </p>
-                            <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-primary" onclick="checkAdmin()">Edit</a>
                             <button class="btn btn-danger delete-user-button" data-user-id="{{ $user->id }}">Delete</button>
                         </div>
                     </div>
@@ -517,6 +520,18 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/material-dashboard-master/assets/js/material-dashboard.min.js?v=3.1.0"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function checkAdmin() 
+    {
+        @if(auth()->user() && !auth()->user()->is_admin)
+           $('#adminModal').modal('show');
+        @endif
+    }
+  </script>
+
 </body>
 
 </html>

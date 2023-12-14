@@ -126,12 +126,15 @@
         <h2>Upcoming Events</h2>
 
         <div class="mb-3">
-            <a href="{{ route('events.created') }}" class="btn btn-info">Tambah Acara</a>
+          <a href="{{ route('events.created') }}" class="btn btn-info" onclick="checkAdmin()">Tambah Acara</a>
         </div>
 
         @if (session('status'))
             <div class="alert alert-success">{{ session('status') }}</div>
         @endif
+
+        @include('layouts.errorModal')
+
 
         <table class="table text-center">
             <thead>
@@ -154,13 +157,13 @@
                     <td>{{ $event->penanggung_jawab }}</td>
                     <td>{{ $event->jam }}</td>
                     <td>
-                        <a href="{{ route('editacara', $event->id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('editacara', $event->id) }}" class="btn btn-primary" onclick="checkAdmin()">Edit</a>
                     </td>
                     <td>
                         <form action="{{ route('events.destroy', $event->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger" onclick="checkAdmin()">Delete</button>
                         </form>
                     </td>
                 </tr>
@@ -451,6 +454,16 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/material-dashboard-master/assets/js/material-dashboard.min.js?v=3.1.0"></script>
+
+  <script>
+    function checkAdmin() 
+    {
+        @if(auth()->user() && !auth()->user()->is_admin)
+           $('#adminModal').modal('show');
+        @endif
+    }
+  </script>
+
 </body>
 
 </html>

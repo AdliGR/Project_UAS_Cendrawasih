@@ -135,11 +135,12 @@
     <!-- End Navbar -->
     <!-- content -->
     <div class="container">
+      @include('layouts.errorModal')
         <h2>Galeri List</h2>
 
         <div class="mb-3">
-            <a href="{{ route('createevent') }}" class="btn bg-gradient-info">Tambah Event</a>
-            <a href="{{ route('addfoto') }}" class="btn bg-gradient-info">Tambah Foto/Video</a>
+            <a href="{{ route('createevent') }}" class="btn bg-gradient-info" onclick="checkAdmin()">Tambah Event</a>
+            <a href="{{ route('addfoto') }}" class="btn bg-gradient-info"onclick="checkAdmin()">Tambah Foto/Video</a>
         </div>
 
         @if (session('status'))
@@ -175,7 +176,7 @@
                             <form action="{{ route('gallery.delete', ['id' => $gallery->id]) }}" method="post" onsubmit="return confirm('Apakah Anda yakin ingin menghapus galeri ini?')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="checkAdmin()">Delete</button>
                             </form>
                         </td>
                     </tr>
@@ -493,6 +494,18 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/material-dashboard-master/assets/js/material-dashboard.min.js?v=3.1.0"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function checkAdmin() 
+    {
+        @if(auth()->user() && !auth()->user()->is_admin)
+           $('#adminModal').modal('show');
+        @endif
+    }
+  </script>
+  
 </body>
 
 </html>

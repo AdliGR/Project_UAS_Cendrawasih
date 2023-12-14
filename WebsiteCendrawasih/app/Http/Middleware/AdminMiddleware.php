@@ -20,6 +20,6 @@ class AdminMiddleware
         }
 
         // For regular users, allow access to view the dashboard
-        return redirect()->route('Admindashboard')->with('error', 'You do not have permission to access this page.');
+        return redirect()->route('Admindashboard');
     }
 }

@@ -136,8 +136,8 @@
     <div class="container mt-5">
         <h2>Fasilitas List</h2>
 
-        <a href="{{ route('fasilitas.create') }}" class="btn bg-gradient-info">Tambah Fasilitas</a>
-        <a href="{{ route('faslitas.excelDL') }}" class="btn btn-success">Download Data Fasilitas</a>
+        <a href="{{ route('fasilitas.create') }}" class="btn bg-gradient-info" onclick="checkAdmin()">Tambah Fasilitas</a>
+        <a href="{{ route('faslitas.excelDL') }}" class="btn btn-success" onclick="checkAdmin()">Download Data Fasilitas</a>
     
         @if (session('status'))
             <div class="alert alert-success">{{ session('status') }}</div>
@@ -145,6 +145,8 @@
         @if (session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
+
+        @include('layouts.errorModal')
 
         <div class="input-group input-group-dynamic mb-3">
             <input type="text" id="searchInput" class="form-control" placeholder="Cari...">
@@ -170,13 +172,13 @@
                             <td>{{ $fasilitasItem->total }}</td>
                             <td>{{ Str::limit($fasilitasItem->note, 25) }}</td>
                             <td>
-                                <a href="{{ route('fasilitas.edit', $fasilitasItem->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="{{ route('fasilitas.edit', $fasilitasItem->id) }}" class="btn btn-warning btn-sm" onclick="checkAdmin()">Edit</a>
                             </td>
                             <td>
                             <form action="{{ route('fasilitas.destroy', $fasilitasItem->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return checkAdmin() && confirm('Yakin ingin menghapus?')">Delete</button>
                             </form>
                         </td>
                         </tr>
@@ -490,6 +492,18 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/material-dashboard-master/assets/js/material-dashboard.min.js?v=3.1.0"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function checkAdmin() 
+    {
+        @if(auth()->user() && !auth()->user()->is_admin)
+           $('#adminModal').modal('show');
+        @endif
+    }
+  </script>
+
 </body>
 
 </html>

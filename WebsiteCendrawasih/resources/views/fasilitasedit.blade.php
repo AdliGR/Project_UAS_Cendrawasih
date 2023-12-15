@@ -41,7 +41,19 @@
       <li class="nav-item">
           <a class="nav-link text-white " href="{{ route('Admindashboard') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 256 256" fill="none" id="my-svg">
+                <defs><pattern id="a" patternUnits="userSpaceOnUse" width="80" height="80" patternTransform="scale(3.19) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M-20.133 4.568C-13.178 4.932-6.452 7.376 0 10c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 24.568C-13.178 24.932-6.452 27.376 0 30c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 44.568C-13.178 44.932-6.452 47.376 0 50c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 64.568C-13.178 64.932-6.452 67.376 0 70c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/></pattern>
+                  <linearGradient id="gradient1">
+                    <stop class="stop1" offset="0%" stop-color="#8f66ff"/>
+                    <stop class="stop2" offset="100%" stop-color="#e6e600"/>
+                  </linearGradient>
+                </defs>
+
+                <g id="group" transform="translate(0,0) scale(1)">
+                  <path d="M53.333 32.000H202.667C214.449 32.000 224.000 41.551 224.000 53.333V74.667V202.667C224.000 214.449 214.449 224.000 202.667 224.000H96.000H53.333C41.551 224.000 32.000 214.449 32.000 202.667V74.667V53.333C32.000 41.551 41.551 32.000 53.333 32.000Z" fill="#3c77b1" stroke-width="14" id="filltone" stroke="url(#gradient1)" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M32.000 74.667V202.667C32.000 214.449 41.551 224.000 53.333 224.000L96.000 224.000M32.000 74.667L32.000 53.333C32.000 41.551 41.551 32.000 53.333 32.000H202.667C214.449 32.000 224.000 41.551 224.000 53.333V74.667M32.000 74.667H96.000M224.000 74.667V202.667C224.000 214.449 214.449 224.000 202.667 224.000H96.000M224.000 74.667H96.000M96.000 74.667V224.000" stroke="url(#gradient1)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" id="stroketone"/>
+                </g>
+              </svg>
             </div>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
@@ -49,7 +61,19 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('Galery') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 256 256" fill="none" id="my-svg">
+  <defs><pattern id="a" patternUnits="userSpaceOnUse" width="80" height="80" patternTransform="scale(3.19) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M-20.133 4.568C-13.178 4.932-6.452 7.376 0 10c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 24.568C-13.178 24.932-6.452 27.376 0 30c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 44.568C-13.178 44.932-6.452 47.376 0 50c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 64.568C-13.178 64.932-6.452 67.376 0 70c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/></pattern>
+    <linearGradient id="gradient1">
+      <stop class="stop1" offset="0%" stop-color="#8f66ff"/>
+      <stop class="stop2" offset="100%" stop-color="#e6e600"/>
+    </linearGradient>
+  </defs>
+  
+  <g id="group" transform="translate(0,0) scale(1)">
+    <path d="M64.000 224.000C52.218 224.000 42.667 214.449 42.667 202.667V53.333C42.667 41.551 52.218 32.000 64.000 32.000H213.333V181.333H202.667V224.000H64.000Z" fill="#3c77b1" stroke-width="14" id="filltone" stroke="url(#gradient1)" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M117.333 32.000V144.000L149.333 117.333L181.333 144.000V32.000M42.667 202.667C42.667 214.449 52.218 224.000 64.000 224.000H202.667M42.667 202.667C42.667 190.884 52.218 181.333 64.000 181.333H202.667M42.667 202.667V53.333C42.667 41.551 52.218 32.000 64.000 32.000H213.333V181.333H202.667M202.667 224.000H213.333M202.667 224.000V181.333" stroke="url(#gradient1)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" id="stroketone"/>
+  </g>
+</svg>
             </div>
             <span class="nav-link-text ms-1">Tambah Galeri</span>
           </a>
@@ -57,7 +81,19 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('showuserlist') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 256 256" fill="none" id="my-svg">
+  <defs><pattern id="a" patternUnits="userSpaceOnUse" width="80" height="80" patternTransform="scale(3.19) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M-20.133 4.568C-13.178 4.932-6.452 7.376 0 10c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 24.568C-13.178 24.932-6.452 27.376 0 30c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 44.568C-13.178 44.932-6.452 47.376 0 50c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 64.568C-13.178 64.932-6.452 67.376 0 70c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/></pattern>
+    <linearGradient id="gradient1">
+      <stop class="stop1" offset="0%" stop-color="#8f66ff"/>
+      <stop class="stop2" offset="100%" stop-color="#e6e600"/>
+    </linearGradient>
+  </defs>
+  
+  <g id="group" transform="translate(0,0) scale(1)">
+    <path x="5" y="4" width="12" height="16" rx="2" fill="#3c77b1" d="M74.667 42.667H160A21.333 21.333 0 0 1 181.333 64V192A21.333 21.333 0 0 1 160 213.333H74.667A21.333 21.333 0 0 1 53.333 192V64A21.333 21.333 0 0 1 74.667 42.667z" id="filltone" stroke="url(#gradient1)" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M117.333 138.667a21.333 21.333 0 1 0 0 -42.667 21.333 21.333 0 0 0 0 42.667Zm0 0s-32 0 -32 26.667m32 -26.667s32 0 32 26.667m64 26.667v-21.333m0 -32v-21.333m0 -53.333v21.333M53.333 64c0 -10.667 10.667 -21.333 21.333 -21.333h85.333c10.667 0 21.333 10.667 21.333 21.333v128c0 10.667 -10.667 21.333 -21.333 21.333H74.667c-10.667 0 -21.333 -10.667 -21.333 -21.333V64Z" stroke="url(#gradient1)" stroke-width="14" stroke-linecap="round" id="stroketone" stroke-linejoin="round"/>
+  </g>
+</svg>
             </div>
             <span class="nav-link-text ms-1">List Guru</span>
           </a>
@@ -65,7 +101,18 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('index.fasilitas') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 256 256" fill="none" id="my-svg">
+  <defs><pattern id="a" patternUnits="userSpaceOnUse" width="80" height="80" patternTransform="scale(3.19) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M-20.133 4.568C-13.178 4.932-6.452 7.376 0 10c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 24.568C-13.178 24.932-6.452 27.376 0 30c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 44.568C-13.178 44.932-6.452 47.376 0 50c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 64.568C-13.178 64.932-6.452 67.376 0 70c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/></pattern>
+    <linearGradient id="gradient1">
+      <stop class="stop1" offset="0%" stop-color="#8f66ff"/>
+      <stop class="stop2" offset="100%" stop-color="#e6e600"/>
+    </linearGradient>
+  </defs>
+  
+  <g id="group" transform="translate(0,0) scale(1)">
+    <path d="M202.667 202.667H53.333C41.551 202.667 32.000 193.116 32.000 181.333V170.667V74.667C32.000 62.885 41.551 53.333 53.333 53.333H106.667C117.333 53.333 128.000 74.667 138.667 74.667H202.667C213.333 74.667 224.000 85.333 224.000 96.000L224.000 181.333C224.000 193.116 213.333 202.667 202.667 202.667Z" fill="#3c77b1" stroke="url(#gradient1)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" id="filltone"/>
+  </g>
+</svg>
             </div>
             <span class="nav-link-text ms-1">List Fasilitas</span>
           </a>
@@ -73,7 +120,18 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('index.acara') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 256 256" fill="none" id="my-svg">
+  <defs><pattern id="a" patternUnits="userSpaceOnUse" width="80" height="80" patternTransform="scale(3.19) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M-20.133 4.568C-13.178 4.932-6.452 7.376 0 10c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 24.568C-13.178 24.932-6.452 27.376 0 30c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 44.568C-13.178 44.932-6.452 47.376 0 50c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 64.568C-13.178 64.932-6.452 67.376 0 70c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/></pattern>
+    <linearGradient id="gradient1">
+      <stop class="stop1" offset="0%" stop-color="#8f66ff"/>
+      <stop class="stop2" offset="100%" stop-color="#e6e600"/>
+    </linearGradient>
+  </defs>
+  
+  <g id="group" transform="translate(0,0) scale(1)">
+    <path d="M128.000 32.000C116.218 32.000 106.667 41.551 106.667 53.333V106.667H53.333C41.551 106.667 32.000 116.218 32.000 128.000C32.000 139.782 41.551 149.333 53.333 149.333H106.667V202.667C106.667 214.449 116.218 224.000 128.000 224.000C139.782 224.000 149.333 214.449 149.333 202.667V149.333H202.667C214.449 149.333 224.000 139.782 224.000 128.000C224.000 116.218 214.449 106.667 202.667 106.667H149.333V53.333C149.333 41.551 139.782 32.000 128.000 32.000Z" fill="#3c77b1" stroke="url(#gradient1)" stroke-width="14" stroke-linejoin="round" id="filltone" stroke-linecap="round"/>
+  </g>
+</svg>
             </div>
             <span class="nav-link-text ms-1">Upcoming Event</span>
           </a>
@@ -82,7 +140,19 @@
           <a class="nav-link text-white" href="{{ route('logout') }}">
             @csrf
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <!-- <i class="material-icons opacity-10">dashboard</i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 256 256" fill="none" id="my-svg">
+  <defs><pattern id="a" patternUnits="userSpaceOnUse" width="80" height="80" patternTransform="scale(3.19) rotate(0)"><rect x="0" y="0" width="100%" height="100%" fill="none"/><path d="M-20.133 4.568C-13.178 4.932-6.452 7.376 0 10c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 24.568C-13.178 24.932-6.452 27.376 0 30c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 44.568C-13.178 44.932-6.452 47.376 0 50c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/><path d="M-20.133 64.568C-13.178 64.932-6.452 67.376 0 70c6.452 2.624 13.036 5.072 20 5 6.967-.072 13.56-2.341 20-5 6.44-2.659 13.033-4.928 20-5 6.964-.072 13.548 2.376 20 5s13.178 5.068 20.133 5.432" stroke-width="30" stroke="url(#gradient1)" fill="none"/></pattern>
+    <linearGradient id="gradient1">
+      <stop class="stop1" offset="0%" stop-color="#8f66ff"/>
+      <stop class="stop2" offset="100%" stop-color="#e6e600"/>
+    </linearGradient>
+  </defs>
+  
+  <g id="group" transform="translate(0,0) scale(1)">
+    <path d="M128.000 213.333L128.000 42.667L85.333 42.667C73.551 42.667 64.000 52.218 64.000 64.000L64.000 192.000C64.000 203.782 73.551 213.333 85.333 213.333L128.000 213.333Z" fill="#3c77b1" stroke-width="14" id="filltone" stroke="url(#gradient1)" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M128.000 42.667L85.333 42.667C73.551 42.667 64.000 52.218 64.000 64.000V192.000C64.000 203.782 73.551 213.333 85.333 213.333H128.000M202.667 128.000H106.667M202.667 128.000L170.667 96.000M202.667 128.000L170.667 160.000" stroke="url(#gradient1)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" id="stroketone"/>
+  </g>
+</svg>
             </div>
             <span class="nav-link-text ms-1">Logout</span>
           </a>

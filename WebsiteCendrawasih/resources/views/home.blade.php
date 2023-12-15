@@ -78,13 +78,34 @@
       }
       
       .our_staff{
-        padding-top: 1px;
-        background-color: rgb(60, 119, 177);
+        padding: 40px 0;
+        background: rgb(85,129,241);
+        background: linear-gradient(90deg, rgba(85,129,241,1) 0%, rgba(41,99,248,1) 52%, rgba(17,83,252,1) 100%);
       }
 
       .our_staff h4{
         margin-top: 10px;
         text-align: center;
+      }
+      .our_staff img { 
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+        border-radius: 50%; 
+      }
+
+      .our_staff .user-details p { 
+        margin-bottom: 0; 
+      }
+
+      .our_staff .user-details h4 { 
+        margin-bottom: 5px; 
+      }
+
+      .our_staff .user-details { 
+        padding: 10px; 
+        background-color: #ffffff; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
       }
   </style>
 </head>

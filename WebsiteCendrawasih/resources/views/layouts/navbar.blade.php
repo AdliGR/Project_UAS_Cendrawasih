@@ -23,9 +23,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('penjurusan') }}"> Penjurusan </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="{{ route('login') }}">Login</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>

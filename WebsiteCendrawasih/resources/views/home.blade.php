@@ -101,11 +101,24 @@
       .our_staff .user-details h4 { 
         margin-bottom: 5px; 
       }
+      .our_staff h2 { 
+        color: #ffff; 
+      }
 
-      .our_staff .user-details { 
+      .our_staff{ 
         padding: 10px; 
-        background-color: #ffffff; 
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+      }
+      .user-details{
+        margin-top:20px;
+        padding: 10px; 
+        color: #ffffff; 
+        border-radius: 40px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .user-details:hover{
+        background-color:#ffff;
+        color: black;
       }
   </style>
 </head>

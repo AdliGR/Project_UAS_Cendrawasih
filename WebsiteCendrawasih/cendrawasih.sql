@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2023 at 10:55 AM
+-- Generation Time: Dec 22, 2023 at 03:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `cendrawasih`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_acara` varchar(255) NOT NULL,
+  `detail_acara` text NOT NULL,
+  `tanggal_acara` date NOT NULL,
+  `penanggung_jawab` varchar(255) NOT NULL,
+  `jam` time NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -52,23 +69,6 @@ CREATE TABLE `fasilitas` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `fasilitas`
---
-
-INSERT INTO `fasilitas` (`id`, `fasilitas`, `total`, `note`, `created_at`, `updated_at`) VALUES
-(6, 'Laboratorium Komputer', 1, 'OK', '2023-11-14 02:24:47', '2023-11-14 02:24:47'),
-(7, 'Laboratorium Bahasa', 1, 'OK', '2023-11-14 02:25:13', '2023-11-14 02:25:13'),
-(8, 'Kantin', 1, 'OK', '2023-11-14 02:25:31', '2023-11-14 02:25:31'),
-(9, 'Ruang Kelas AC', 1, '(Khusus TK)', '2023-11-14 02:25:52', '2023-11-14 02:25:52'),
-(10, 'Ruang Multimedia', 1, '(Khusus TK)', '2023-11-14 02:26:07', '2023-11-14 02:26:07'),
-(11, 'Koneksi Internet', 1, 'OK', '2023-11-14 02:26:22', '2023-11-14 02:26:22'),
-(12, 'Perpustakaan', 1, 'OK', '2023-11-14 02:26:35', '2023-11-14 02:26:35'),
-(13, 'Lapangan Basket', 1, 'OK', '2023-11-14 02:26:46', '2023-11-14 02:26:46'),
-(14, 'Lapangan Futsal', 1, 'OK', '2023-11-14 02:26:55', '2023-11-14 02:26:55'),
-(15, 'Stadion Mini Cendrawasih', 1, 'OK', '2023-11-14 02:27:13', '2023-11-14 02:27:13'),
-(16, 'Aula Pertemuan', 1, 'OK', '2023-11-14 02:27:25', '2023-11-14 02:27:25');
-
 -- --------------------------------------------------------
 
 --
@@ -79,22 +79,11 @@ CREATE TABLE `foto` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nama_file` varchar(255) NOT NULL,
   `acara` varchar(255) NOT NULL,
-  `file_path` varchar(255) NOT NULL,
+  `file_path_foto` varchar(255) NOT NULL,
+  `file_path_foto_comp` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `foto`
---
-
-INSERT INTO `foto` (`id`, `nama_file`, `acara`, `file_path`, `created_at`, `updated_at`) VALUES
-(15, '2121.PNG', '17 Agustus', 'foto/2121.PNG', '2023-11-14 00:07:41', '2023-11-14 00:07:41'),
-(16, 'dfd.PNG', '17 Agustus', 'foto/dfd.PNG', '2023-11-14 00:07:41', '2023-11-14 00:07:41'),
-(17, 'graph 1.PNG', '17 Agustus', 'foto/graph 1.PNG', '2023-11-14 00:07:41', '2023-11-14 00:07:41'),
-(18, 'nih.PNG', '17 Agustus', 'foto/nih.PNG', '2023-11-14 00:08:08', '2023-11-14 00:08:08'),
-(19, 'noh.PNG', '17 Agustus', 'foto/noh.PNG', '2023-11-14 00:08:09', '2023-11-14 00:08:09'),
-(20, 'o.PNG', '17 Agustus', 'foto/o.PNG', '2023-11-14 00:08:09', '2023-11-14 00:08:09');
 
 -- --------------------------------------------------------
 
@@ -111,13 +100,20 @@ CREATE TABLE `galleries` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `galleries`
+-- Table structure for table `gallery`
 --
 
-INSERT INTO `galleries` (`id`, `name_event`, `date`, `deskripsi`, `created_at`, `updated_at`) VALUES
-(4, 'Mobile Legends Competition Champion', '2023-11-12', '5 students of SMK Cendrawasih who have won the Mobile Legends Competition at @sma_santapatricia', '2023-11-14 02:29:52', '2023-11-14 02:29:52'),
-(5, 'KEGIATAN LDK SMP SMK KRISTEN CENDRAWASIH – DAY 1', '2023-09-28', 'KEGIATAN LDK SMP SMK KRISTEN CENDRAWASIH – DAY 1', '2023-11-14 02:32:33', '2023-11-14 02:32:33');
+CREATE TABLE `gallery` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name_event` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `deskripsi` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -136,15 +132,15 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2023_11_10_032714_create_users_table', 2),
-(6, '2023_11_10_041141_create_gallery_table', 3),
-(7, '2023_11_10_055238_create_galleries_table', 4),
-(8, '2023_11_10_065150_create_foto_table', 5),
-(9, '2023_11_14_044450_create_fasilitas_table', 6);
+(52, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+(53, '2019_08_19_000000_create_failed_jobs_table', 1),
+(54, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(55, '2023_11_10_032714_create_users_table', 1),
+(56, '2023_11_10_041141_create_gallery_table', 1),
+(57, '2023_11_10_055238_create_galleries_table', 1),
+(58, '2023_11_10_065150_create_foto_table', 1),
+(59, '2023_11_14_044450_create_fasilitas_table', 1),
+(60, '2023_11_23_063607_create_events_table', 1);
 
 -- --------------------------------------------------------
 
@@ -185,10 +181,15 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `display_name` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
+  `is_admin` tinyint(1) NOT NULL DEFAULT 0,
+  `role` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `guru` varchar(255) DEFAULT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -198,12 +199,21 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(4, 'raf', 'raf1@gmail.com', NULL, '$2y$12$pqYjDVmIEVj0ZqAOPTPofuSZhKZHkxWFfk1Iv3T3mM.avc1C/GVOq', NULL, '2023-11-09 23:34:51', '2023-11-09 23:34:51');
+INSERT INTO `users` (`id`, `display_name`, `name`, `email`, `email_verified_at`, `password`, `is_admin`, `role`, `photo`, `guru`, `remember_token`, `created_at`, `updated_at`) VALUES
+(7, 'admin', 'admin', 'admin@cendrawasih.ac.id', NULL, '$2y$12$rogT/YnOrgxAsGZMO39uMe7EcwrmJbm3bc45wOcvzf9xBEMiGqD22', 1, 'Guru', NULL, NULL, NULL, '2023-12-03 01:03:44', '2023-12-03 01:03:44'),
+(9, 'Edison Sirait, SE', 'Edison Sirait', 'edison.sirait@cendrawasih.ac.id', NULL, '$2y$12$77g3Yqp4MJg568RjEx7jseYSL7XKBPFxCMt4O6536DZtAYcqDgTqO', 1, 'Kepala Sekolah', 'foto_guru/1701597872.jpg', NULL, NULL, '2023-12-03 03:04:32', '2023-12-03 05:25:32'),
+(10, 'Dra. Yani Lesmana', 'Yani Lesmana', 'yani.lesmana@cendrawasih.ac.id', NULL, '$2y$12$7Q4freccEhg/xdcrRvv8eulkO1ojrflqQ9sWJdDOL.PDLCfpEIxrG', 1, 'Wakil Kepala Sekolah', 'foto_guru/1701607394.jpg', NULL, NULL, '2023-12-03 05:39:10', '2023-12-03 05:43:14'),
+(11, 'user', 'user', 'user@cendrawasih.ac.id', NULL, '$2y$12$gkPSxMk.D/CAZkKbTQRLf.oHMCfnFaZ4.Lczac/jOpMYsBySWDQ8S', 0, 'Guru', NULL, NULL, NULL, '2023-12-03 06:47:16', '2023-12-03 06:47:16');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -228,6 +238,12 @@ ALTER TABLE `foto`
 -- Indexes for table `galleries`
 --
 ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -262,6 +278,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -271,25 +293,31 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `fasilitas`
 --
 ALTER TABLE `fasilitas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -301,7 +329,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
